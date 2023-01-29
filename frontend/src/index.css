@@ -1,0 +1,292 @@
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+.color-main {
+    background-color: #f0f1f2;
+}
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control, .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select, .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+     border-top-right-radius: initial !important;
+     border-bottom-right-radius: initial !important;
+}
+.mobileleft {
+    margin-left: 5rem !important;
+    position: fixed !important;
+}
+body {
+    margin: 0;
+    margin-bottom: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: 992px) {
+    .space {
+        margin-top: 3rem;
+    }
+}
+    @media (max-width: 992px) {
+        .navbar-collapse {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            padding-left: 35px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-top: 25px;
+            font-size: 20px;
+            width: 45%;
+            height: 100%;
+        }
+
+            .navbar-collapse.collapsing {
+                left: -75%;
+                transition: height 0s;
+            }
+
+            .navbar-collapse.show {
+                left: 0;
+                transition: left 0ms;
+            }
+
+        .navbar-toggler.collapsed ~ .navbar-collapse {
+            transition: left 0ms;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .navbar-collapse1 {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-top: 25px;
+            width: 100%;
+            height: 100px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .navbar-collapse2 {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            padding-left: 35px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-top: 20px;
+            width: 100%;
+            height: 155px;
+        }
+    }
+
+    .font-bold {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .mobileHeader {
+        height: 55px;
+    }
+
+    .padding-bottom {
+        padding-bottom: 10rem;
+    }
+
+    button#dropdown-basic-button1 {
+        width: 150px;
+        border-radius: 1px !important;
+    }
+
+    button#dropdown-basic-button2 {
+        border-radius: 10px !important;
+    }
+
+    button#dropdown-basic-button {
+        border-bottom-right-radius: 0px !important;
+        border-top-right-radius: 0 !important;
+    }
+
+    .display3 {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1.25;
+        margin: 0;
+        padding: 0;
+    }
+
+    .display2 {
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 1.25;
+        margin: 0;
+        padding: 0;
+    }
+
+    .today {
+        background-color: #54B4D3;
+    }
+
+    .text-small {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    }
+
+    .footer {
+        background-color: #0d6efd;
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none !important;
+    }
+
+        footer a:hover {
+            color: #b1b1b1;
+            text-decoration: none !important;
+        }
+
+    .map-responsive {
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+
+    .color-white {
+        background-color: #fff;
+    }
+
+    .map-responsive iframe {
+        left: 0;
+        top: 0;
+        height: 200px !important;
+        width: 400px !important;
+    }
+
+    .table > :not(caption) > * > * {
+        padding: 0.5rem 0.5rem;
+        background-color: var(--bs-table-bg);
+        border-bottom-width: 0px !important;
+        box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+    }
+
+    .table1 {
+        width: 350px !important;
+    }
+
+    .carouselheight {
+        max-height: 30rem;
+    }
+
+    .fixed {
+        position: relative;
+        top: 0;
+        max-height: 30rem;
+    }
+
+    .margintop {
+        padding-top: 13rem;
+    }
+
+    .width-bar {
+        width: 10rem;
+    }
+
+    .list-group-item {
+        border: none;
+    }
+
+    #custom_carousel .item {
+        color: #000;
+        background-color: #eee;
+        padding: 20px 0;
+    }
+
+    #custom_carousel .controls {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+        text-align: center;
+        position: relative;
+        background: #ddd
+    }
+
+        #custom_carousel .controls li {
+            display: table-cell;
+            width: 1%;
+            max-width: 90px
+        }
+
+            #custom_carousel .controls li.active {
+                background-color: #eee;
+                border-top: 3px solid orange;
+            }
+
+        #custom_carousel .controls a small {
+            overflow: hidden;
+            display: block;
+            font-size: 10px;
+            margin-top: 5px;
+            font-weight: bold
+        }
+
+    .categoryImage {
+        height: 20rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categoryCard {
+        margin-right: 1rem;
+        margin-top: 1rem;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        border: none !important;
+    }
+
+    .noSpace {
+        --bs-gutter-x: 0;
+    }
+
+    .img-thumbnail {
+        border: none !important;
+        height: 100% !important;
+    }
+
+    .zoomOnHover {
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+        .zoomOnHover img {
+            transition: 0.5s all ease-in-out;
+        }
+
+        .zoomOnHover:hover img {
+            transform: scale(1.5);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+
+    .ColFont {
+        font-weight: bold;
+    }
+
+    .ColIcon {
+        font-size: 18px;
+    }
