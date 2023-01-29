@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\backend",
-    "\\backend\\config",
-    "\\backend\\routes",
+    "\\backend\\middleware",
     "\\frontend",
     "\\frontend\\src",
     "\\frontend\\src\\components",
     "\\frontend\\src\\pages",
+    "\\frontend\\src\\pages\\admin\\components",
     "\\frontend\\src\\pages\\components",
-    "\\frontend\\src\\router"
+    "\\frontend\\src\\redux\\actions"
   ],
-  "SelectedNode": "\\backend\\.env",
+  "SelectedNode": "\\backend\\package.json",
   "PreviewInSolutionExplorer": false
 }
