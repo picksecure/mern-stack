@@ -3,7 +3,7 @@
   "name": "Dr Jeep LLC Sell Parts",
   "content_security_policy": [
     {
-      "content_security_policy": "script-src-elem 'self' https://code.jquery.com/jquery-3.2.1.slim.min.js https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js; object-src 'self'"
+      "content_security_policy": "script-src-elem 'self' https://code.jquery.com/jquery-3.2.1.slim.min.js; object-src 'self'"
     },
     {
       "content_security_policy": "script-src 'self' https://www.google.com/; object-src 'self'"

@@ -52,12 +52,6 @@ function MobileHeaderComponent() {
             navigate("/product-list");
         }
     }
-
-    $(document).click(function (e) {
-        if (!$(e.target).is('button')) {
-            $('.collapse').collapse('navbarCollapse');
-        }
-    });
     useEffect(() => {
         if (userInfo.isAdmin) {
             var audio = new Audio("/audio/chat-msg.mp3");
