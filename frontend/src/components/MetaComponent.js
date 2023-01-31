@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
- const MetaComponent = ({ title = "Best online shop", description="Example description" }) => {
+const MetaComponent = ({ title = "Dr Jeep | Used  Dealership in Salem, UT", description ="Dr Jeep sells and services  vehicles in the greater Salem UT area." }) => {
     return (
        <HelmetProvider>
            <Helmet>
