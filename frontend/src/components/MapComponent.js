@@ -4,16 +4,16 @@ import { Marker } from '@react-google-maps/api';
 
 const containerStyle = {
     width: '400px',
-    height: '400px'
+    height: '300px'
 };
 
 const center = {
-    lat: -3.745,
-    lng: -38.523
+    lat: 40.056750,
+    lng: -111.672940
 };
 const position = {
-    lat: 37.772,
-    lng: -122.214
+    lat: 40.056750,
+    lng: -111.672940
 }
 const onLoad = marker => {
     console.log('marker: ', marker)
@@ -26,7 +26,7 @@ function MapComponent() {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={10}
+                zoom={20}
             >
                 <Marker
                     onLoad={onLoad}
