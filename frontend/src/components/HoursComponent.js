@@ -29,7 +29,7 @@ const HoursComponent = ({ setting }) => {
                                 <td>{setting.tusHoursOp} - {setting.tusHoursCl}</td>
                             </tr>
                             <tr>
-                                <td>WednesDay</td>
+                                <td>Wednesday</td>
                                 <td>{setting.wedHoursOp} - {setting.wedHoursCl}</td>
                             </tr>
                             <tr>
