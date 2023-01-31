@@ -27,8 +27,8 @@ const FooterComponent = () => {
                   <Col className="pt-5" md={5 }>
                       <h4>Location</h4>
                       <div className="map-responsive ms-4">
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3053.838930268675!2d-111.67513158430134!3d40.05669528538029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x874d97684aed666b%3A0x9e7f970ae7687da9!2sDr.%20Jeep%20llc%2C%20130%20N%20Main%20St%2C%20Salem%2C%20UT%2084653!3m2!1d40.056691199999996!2d-111.6729429!5e0!3m2!1sen!2sus!4v1675147766245!5m2!1sen!2sus"></iframe>
-                          </div>
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.8391133491677!2d-111.6729429!3d40.056691199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874da4c9e4ee2c6d%3A0xad4049fee056a83a!2s130%20N%20Main%20St%2C%20Salem%2C%20UT%2084653!5e0!3m2!1sen!2sus!4v1675148042497!5m2!1sen!2sus"></iframe>
+                      </div>
                           </Col>
               </Row>
               <Row>
