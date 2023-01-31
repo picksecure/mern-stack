@@ -26,9 +26,10 @@ const FooterComponent = () => {
                   </Col>
                   <Col className="pt-5" md={5 }>
                       <h4>Location</h4>
-                          <div className="map-responsive ms-4">
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d97646.80635700405!2d-111.69817434439639!3d40.10969095641064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x874d97684aed666b%3A0x9e7f970ae7687da9!2sdr%20jeep%20llc!3m2!1d40.056691199999996!2d-111.6729429!5e0!3m2!1sen!2sus!4v1675145458735!5m2!1sen!2sus"></iframe></div>
-                  </Col>
+                      <div className="map-responsive ms-4">
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3053.838930268675!2d-111.67513158430134!3d40.05669528538029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x874d97684aed666b%3A0x9e7f970ae7687da9!2sDr.%20Jeep%20llc%2C%20130%20N%20Main%20St%2C%20Salem%2C%20UT%2084653!3m2!1d40.056691199999996!2d-111.6729429!5e0!3m2!1sen!2sus!4v1675147766245!5m2!1sen!2sus"></iframe>
+                          </div>
+                          </Col>
               </Row>
               <Row>
                   <Col className="text-center border-top mt-3 pt-3 pb-3">
