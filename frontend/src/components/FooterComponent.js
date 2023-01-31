@@ -1,6 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import paths from "../router/paths";
+import MapComponent from "./MapComponent";
 
 const FooterComponent = () => {
    
@@ -26,10 +27,7 @@ const FooterComponent = () => {
                   </Col>
                   <Col className="pt-5" md={5 }>
                       <h4>Location</h4>
-                      <div className="map-responsive ms-4">
-                          <iframe src="https://storage.googleapis.com/maps-solutions-aza6qkpzkg/locator-plus/wo5b/locator-plus.html">
-                          </iframe>
-                      </div>
+                      <MapComponent/>
                           </Col>
               </Row>
               <Row>
