@@ -8,7 +8,7 @@ import { useMediaQuery } from './useMediaQuery';
 const Layout = ({ children }) => {
     const isPageWide = useMediaQuery('(min-width: 992px)')
     const isPageWide1 = useMediaQuery('(max-width: 991px)')
-
+  
     return (
         <div className="d-flex flex-column min-vh-100">
 

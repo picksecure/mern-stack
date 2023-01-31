@@ -129,6 +129,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 defaultValue={setting.shipping}
                             />
                         </Form.Group>
+                       
                         <h4>Dr. Jeep Hours</h4>
                         <Table size="sm">
 

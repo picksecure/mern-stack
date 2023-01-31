@@ -9,6 +9,7 @@ const settingsSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+  
         monHoursOp: { type: String, required: true },
         monHoursCl: { type: String, required: true },
         tusHoursOp: { type: String, required: true },
