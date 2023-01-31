@@ -5,7 +5,8 @@ const MetaComponent = ({ title = "Dr Jeep | Used  Dealership in Salem, UT", desc
        <HelmetProvider>
            <Helmet>
               <title>{title}</title> 
-              <meta name="description" content={description} />
+                <meta name="description" content={description} />
+
            </Helmet>
        </HelmetProvider> 
     )
