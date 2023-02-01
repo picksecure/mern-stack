@@ -76,7 +76,7 @@ io.on("connection", (socket) => {
 const apiRoutes = require("./routes/apiRoutes");
 
 app.use(function (req, res, next) { 
-    res.setHeader("content-security-policy", "default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https:; img-src 'self' data:; font-src 'self' data: https:; object-src 'none'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'self'")
+    res.setHeader("content-security-policy-report-only", "script-src maps.googleapis.com;img-src data: maps.gstatic.com *.googleapis.com *.ggpht.com")
   next();
 });
 
