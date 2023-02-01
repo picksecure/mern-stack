@@ -28,6 +28,10 @@ const FooterComponent = () => {
                   <Col className="pt-5" md={5 }>
                       <h4>Location</h4>
                       <MapComponent/>
+                      <div className="map-responsive ms-4">
+                          <iframe src="https://storage.googleapis.com/maps-solutions-aza6qkpzkg/locator-plus/wo5b/locator-plus.html">
+                          </iframe>
+                      </div>
                           </Col>
               </Row>
               <Row>
