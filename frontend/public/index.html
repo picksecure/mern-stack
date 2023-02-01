@@ -11,13 +11,19 @@
     <meta name="title" content="Default Title" data-react-helmet="true" />
     <meta http-equiv="Content-Security-Policy"
           content="
-          default-src *;
-          script-src 'self';
-          connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline';
-          child-src * data;
-          frame-src https:;
-          script-src-elem * https://maps.googleapis.com/;
-          style-src * 'unsafe-inline'; font-src * 'unsafe-inline';" />
+          default-src 'self';
+script-src 'report-sample' 'self' https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js https://maps.googleapis.com/maps/api/js;
+style-src 'report-sample' 'self' https://fonts.googleapis.com;
+object-src 'none';
+base-uri 'self';
+connect-src 'self' https://maps.googleapis.com;
+font-src 'self' https://fonts.gstatic.com;
+frame-src 'self';
+img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com;
+manifest-src 'self';
+media-src 'self';
+report-uri https://63d9c9001110c9e871bfcd76.endpoint.csper.io/?v=0;
+worker-src 'none';" />
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

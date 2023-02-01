@@ -92,9 +92,6 @@ if (process.env.NODE_ENV === "production") {
         res.json({ message: "API running..." });
     })
 }
-app.use(
-    helmet.contentSecurityPolicy() = false
-)
 app.use((error, req, res, next) => {
     if (process.env.NODE_ENV === "development") {
         console.error(error);
