@@ -75,10 +75,10 @@ io.on("connection", (socket) => {
 
 const apiRoutes = require("./routes/apiRoutes");
 
-app.use(function (req, res, next) { 
-    res.setHeader("content-security-policy", "script-src maps.googleapis.com;img-src data: maps.gstatic.com *.googleapis.com *.ggpht.com")
-  next();
-});
+//app.use(function (req, res, next) { 
+//    res.setHeader("content-security-policy-report-only", "script-src maps.googleapis.com;img-src data: maps.gstatic.com *.googleapis.com *.ggpht.com")
+ // next();
+//});
 
 // mongodb connection
 const connectDB = require("./config/db");
