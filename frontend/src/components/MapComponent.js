@@ -27,7 +27,6 @@ function MapComponent() {
                 mapContainerStyle={containerStyle}
                 center={center}
                 zoom={20}
-                crossorigin="anonymous"
             >
                 <Marker
                     onLoad={onLoad}
