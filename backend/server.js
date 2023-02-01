@@ -76,7 +76,7 @@ io.on("connection", (socket) => {
 const apiRoutes = require("./routes/apiRoutes");
 
 app.use(function (req, res, next) { 
-    res.setHeader("content-security-policy-report-only", "object-src 'none'; script-src-elem * https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js;")
+    res.setHeader("content-security-policy-report-only", "object-src 'none'; script-src-elem * 'self' https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js;")
   next();
 });
 
