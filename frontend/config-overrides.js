@@ -5,7 +5,7 @@ const cspConfigPolicy = {
     'default-src': "'none'",
     'base-uri': "'self'",
     'object-src': "'none'",
-    'img-source': "'self'",
+    'img-src': "'self'",
     'script-src-elem': ["https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"],
     'script-src': ["'self'"],
     'style-src': ["'self'"]
