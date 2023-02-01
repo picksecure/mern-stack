@@ -6,7 +6,7 @@ const cspConfigPolicy = {
     'base-uri': "'self'",
     'object-src': "'none'",
     'img-src': "'self'",
-    'script-src-elem': ["'unsafe-inline' https://cdn.jsdelivr.net/"],
+    'script-src-elem': ["'self' 'unsafe-inline'"],
     'script-src': ["'self'"],
     'style-src': ["'self'"]
 };
