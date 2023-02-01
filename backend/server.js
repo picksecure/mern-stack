@@ -92,7 +92,13 @@ if (process.env.NODE_ENV === "production") {
         res.json({ message: "API running..." });
     })
 }
-
+app.use(function (req, res, next) {
+    res.setHeader(
+        'Content-Security-Policy-Report-Only',
+        "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
+    );
+    next();
+});
 app.use((error, req, res, next) => {
     if (process.env.NODE_ENV === "development") {
         console.error(error);
