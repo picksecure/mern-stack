@@ -1,7 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import React from "react";
+import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
