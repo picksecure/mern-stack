@@ -98,6 +98,13 @@ body {
         height: 855px !important;
     }
 }
+@media (max-width: 992px) {
+    .img-thumbnail {
+        border: none !important;
+        height: 100px !important;
+        width: 100%;
+    }
+}
     .font-bold {
         font-weight: bold;
         font-size: 25px;
