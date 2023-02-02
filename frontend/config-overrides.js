@@ -8,7 +8,8 @@ const cspConfigPolicy = {
     'img-src': "'self' data: *",
     'script-src-elem': ["'self' 'unsafe-inline'"],
     'script-src': ["'self'"],
-    'style-src': "'self' 'unsafe-inline'"
+    'style-src': "'self' 'unsafe-inline'",
+    'style-src-elem': "'self' 'unsafe-inline'"
 };
 
 function addCspHtmlWebpackPlugin(config) {
