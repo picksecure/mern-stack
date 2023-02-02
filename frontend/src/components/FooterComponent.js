@@ -10,7 +10,7 @@ const FooterComponent = () => {
           <Container fluid className="footer text-light">
               <Row className="mt-5">
                   <Col md={1}></Col>
-                  <Col className="pt-5 mt-5" md={2}>
+                  <Col className="text-center pt-5 mt-2 mb-3" md={2}>
                       <h4>Logo</h4>
                   </Col>
                   <Col className="pt-5 ps-5" md={2 }>
@@ -20,7 +20,7 @@ const FooterComponent = () => {
                       <Link to={paths.CUSTOMBUILDS}><p className="small mb-0 ms-3">Gallery</p></Link>
                       <p className="small mb-0 ms-3">About Us</p>
                   </Col>
-                  <Col className="pt-5" md={2 }>
+                  <Col className="pt-5 ps-5" md={2 }>
                       <h4>Get In Touch</h4>
                       <p className="small mb-0 ms-3">Contact Us</p>
                       <p className="small mb-0 ms-3">130 N MAIN ST Salem, UT 84653</p>
