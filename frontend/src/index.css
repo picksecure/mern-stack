@@ -90,7 +90,7 @@ body {
     }
 @media (max-width: 992px) {
     .carouselheight {
-        height: 395px !important;
+        height: 345px !important;
     }
 }
 @media (min-width: 993px) {
