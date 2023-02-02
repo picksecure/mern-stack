@@ -62,7 +62,7 @@ return (
                         <Form.Label>Contact:</Form.Label>
                         <Form.Select className="border-dark" name="contact" required aria-label="Default select example">
                             <option>Open this select menu</option>
-                            <option selected value="Phone">Phone</option>
+                            <option value="Phone">Phone</option>
                             <option value="Email">Email</option>
                         </Form.Select>
                         

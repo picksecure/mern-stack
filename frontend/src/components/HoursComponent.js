@@ -12,7 +12,7 @@ const HoursComponent = ({ setting }) => {
         $('.opening-hours2 tr').eq(new Date().getDay()).addClass('today');
     });
     return (
-        <Container className="mb-5 mt-5">
+        <Container className="mb-5 pb-5 mt-5">
             <Row className="justify-content-center">
                 <Col md={4}>
                     <h4>Dr. Jeep Hours</h4>

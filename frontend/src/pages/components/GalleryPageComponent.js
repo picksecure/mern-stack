@@ -13,7 +13,7 @@ const GalleryPageComponent = ({ fetchSetting, newMessage}) => {
     
     return (
         <>
-            <Container className="mt-5">
+            <Container className="mt-5 mb-5 pb-5">
                 <Row xs={1} md={12} className="text-center">
                     <h1 className="display3">Check Out Our Custom Builds</h1>
                     <div role="article" className="mb-2">We build Jeep Wranglers and carry the parts to keep your Wrangler running. At Dr Jeep "We Keep You Jeepin"</div>

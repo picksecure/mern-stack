@@ -98,7 +98,7 @@ const ProductListPageComponent = ({ getProducts, categories }) => {
   };
 
   return (
-    <Container fluid>
+    <Container className="mb-5 pb-5" fluid>
       <Row>
         <Col md={3}>
           <ListGroup variant="flush">
