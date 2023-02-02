@@ -2,8 +2,18 @@ import { Row, Col, Table } from "react-bootstrap";
 import AdminLinksComponent from "../../../components/admin/AdminLinksComponent";
 import { useState, useEffect } from "react";
 
-const MessagePageComponent = ({ fetchMessages }) => {
+const MessagePageComponent = ({ fetchMessages, deleteMessage }) => {
     const [message, setMessage] = useState([]);
+    const [messageDeleted, setMessageDeleted] = useState(false);
+
+    const deleteHandler = async (productId) => {
+        if (window.confirm("Are you sure?")) {
+            const data = await deleteMessage(messageId)
+            if (data.message === "message removed") {
+                setMessageDeleted(!messageDeleted);
+            }
+        }
+    };
 
     useEffect(() => {
         const abctrl = new AbortController();
@@ -15,7 +25,7 @@ const MessagePageComponent = ({ fetchMessages }) => {
                 ]),
             );
         return () => abctrl.abort();
-    }, [fetchMessages]);
+    }, [messageDeleted, fetchMessages]);
 
     return (
         <Row className="m-5">

@@ -7,9 +7,12 @@ const fetchMessages = async (abctrl) => {
     })
     return data;
 }
-
+const deleteMessage = async (productId) => {
+    const { data } = await axios.delete(`/api/messages/admin/${messageId}`);
+    return data
+}
 const AdminContactPage = () => {
-    return <MessagePageComponent fetchMessages={fetchMessages} />
+    return <MessagePageComponent deleteMessage={deleteMessage} fetchMessages={fetchMessages} />
 };
 
 export default AdminContactPage;

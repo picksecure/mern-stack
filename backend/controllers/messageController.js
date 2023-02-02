@@ -8,6 +8,15 @@ const getMessages = async (req, res, next) => {
         next(error)
     }
 }
+const adminDeleteMessage = async (req, res, next) => {
+    try {
+        const messages = await Message.findById(req.params.id).orFail();
+        await messages.remove();
+        res.json({ message: "message removed" });
+    } catch (err) {
+        next(err);
+    }
+};
 const newMessage = async (req, res, next) => {
     try {
         const messages = new Message();
@@ -39,4 +48,4 @@ const getMessagesById = async (req, res, next) => {
     }
 };
 
-module.exports = { getMessages, newMessage, getMessagesById }
+module.exports = { adminDeleteMessage, getMessages, newMessage, getMessagesById }
