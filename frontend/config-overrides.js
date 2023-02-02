@@ -5,7 +5,7 @@ const cspConfigPolicy = {
     'default-src': "'self'",
     'base-uri': "'self'",
     'object-src': "'none'",
-    'img-src': "'self' 'unsafe-inline'",
+    'img-src': "'self' data: *",
     'script-src-elem': ["'self' 'unsafe-inline'"],
     'script-src': ["'self'"],
     'style-src': ["'self' 'unsafe-inline'"]
