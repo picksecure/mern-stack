@@ -81,7 +81,7 @@ const LoginPageComponent = ({ loginUserApiRequest, reduxDispatch, setReduxUserSt
                         <Row className="text-center pb-2">
                             <Col>
                                 Don't you have an account?
-                                <Link to={paths.REGISTER}> Register </Link>
+                                <Link to={paths.REGISTER}>Register</Link>
                             </Col>
                         </Row>
                         <div className="text-center mt-3">

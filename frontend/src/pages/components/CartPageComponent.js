@@ -23,8 +23,8 @@ const CartPageComponent = ({
     /*({cartItems.length} {cartItems.length === 1 ? "Product" : "Products"}) */
    
     return (
-        <Container className="ms-5" fluid>
-            <Row className="mt-5 pt-5 ms-5">
+        <Container className="padding-mobile" fluid>
+            <Row className="mt-5 pt-5 me-2">
                 <Col md={8}>
                     <h1>Shopping Cart</h1>
                     {cartItems.length === 0 ? (

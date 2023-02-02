@@ -26,6 +26,17 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+@media (max-width : 992px) {
+    .padding-mobile {
+        margin: 0 !important;
+    }
+}
+@media (min-width : 993px) {
+    .padding-mobile {
+        margin-left: 3rem !important;
+        margin-right: 3rem !important;
+    }
+}
 @media (max-width: 992px) {
     .space {
         margin-top: 0rem;
