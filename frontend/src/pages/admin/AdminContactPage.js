@@ -7,7 +7,7 @@ const fetchMessages = async (abctrl) => {
     })
     return data;
 }
-const deleteMessage = async (productId) => {
+const deleteMessage = async (messageId) => {
     const { data } = await axios.delete(`/api/messages/admin/${messageId}`);
     return data
 }

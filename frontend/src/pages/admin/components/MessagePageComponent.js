@@ -1,12 +1,14 @@
 import { Row, Col, Table } from "react-bootstrap";
 import AdminLinksComponent from "../../../components/admin/AdminLinksComponent";
 import { useState, useEffect } from "react";
+import { BsTrash } from 'react-icons/bs';
+import { Button } from "react-bootstrap";
 
 const MessagePageComponent = ({ fetchMessages, deleteMessage }) => {
     const [message, setMessage] = useState([]);
     const [messageDeleted, setMessageDeleted] = useState(false);
 
-    const deleteHandler = async (productId) => {
+    const deleteHandler = async (messageId) => {
         if (window.confirm("Are you sure?")) {
             const data = await deleteMessage(messageId)
             if (data.message === "message removed") {
@@ -52,6 +54,7 @@ const MessagePageComponent = ({ fetchMessages, deleteMessage }) => {
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Comment</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,7 +66,15 @@ const MessagePageComponent = ({ fetchMessages, deleteMessage }) => {
                                 <td className="text-center">{item.phone}</td>
                                 <td className="text-center">{item.email}</td>
                                 <td className="text-center">{item.comment}</td>
-                                
+                                <td className="text-center">
+                                    <Button
+                                        variant="outline-danger"
+                                        className="btn-sm"
+                                        onClick={() => deleteHandler(item._id)}
+                                    >
+                                        <BsTrash />
+                                    </Button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
