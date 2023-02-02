@@ -88,7 +88,16 @@ body {
             height: 155px;
         }
     }
-
+@media (max-width: 992px) {
+    .carouselheight {
+        height: 395px !important;
+    }
+}
+@media (min-width: 993px) {
+    .carouselheight {
+        height: 900px !important;
+    }
+}
     .font-bold {
         font-weight: bold;
         font-size: 25px;
@@ -188,11 +197,6 @@ body {
     .table1 {
         width: 350px !important;
     }
-
-    .carouselheight {
-        max-height: 30rem;
-    }
-
     .fixed {
         position: relative;
         top: 0;

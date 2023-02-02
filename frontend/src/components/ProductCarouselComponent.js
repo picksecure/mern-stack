@@ -12,8 +12,8 @@ const ProductCarouselComponent = ({ bestSellers }) => {
         <Carousel.Item key={idx}>
           <img
             crossOrigin="anonymous"
-            className="d-block w-100"
-            style={{ height: "800px", objectFit: "cover" }}
+                  className="carouselheight d-block w-100"
+            style={{ objectFit: "cover" }}
             src={item.images ? item.images[0].path : null}
             alt="First slide"
           />
