@@ -7,9 +7,9 @@ const cspConfigPolicy = {
     'object-src': "'none'",
     'img-src': "'self' data: *",
     'script-src-elem': ["'self' 'unsafe-inline'"],
-    'script-src': ["'self' https://maps.googleapis.com/maps/api/js"],
+    'script-src': ["'self'"],
     'style-src': "'self' 'unsafe-inline'",
-    'style-src-elem': "'self' 'unsafe-inline'",
+    'style-src-elem': "'self' 'unsafe-inline' https://maps.googleapis.com/maps/api/js",
     'style-src-attr': "'self' 'unsafe-inline'"
 };
 
