@@ -44,7 +44,7 @@ const HomePageComponent = ({ fetchSetting, getBestsellers }) => {
                   <ImageGallery />
               </Row>
               <Row xs={1} md={12} className="mt-5 text-center">
-                      <p className="ColFont mt-1 ms-4"><BsFillGearFill className="ColIcon me-3" />Check Out All Of Our Custom Builds! <Link to={paths.CUSTOMBUILDS}> <Button className="ms-3" variant="outline-primary" >View Gallery</Button></Link></p>
+                      <p className="ColFont w-100"><BsFillGearFill className="ColIcon me-3" />Check Out All Of Our Custom Builds! <Link to={paths.CUSTOMBUILDS}> <Button className="ms-2 padding-top" variant="outline-primary" >View Gallery</Button></Link></p>
        
               </Row>
           </Container>

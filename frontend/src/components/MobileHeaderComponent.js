@@ -95,23 +95,23 @@ function MobileHeaderComponent() {
             </nav>
             <div className="collapse navbar-collapse bg-light" id="navbarToggleExternalContent">
                 <ul className="p-4 navbar-nav">
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <Link className="nav-link" to={paths.ROOT}>Home</Link>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <Link className="nav-link" to={paths.PRODUCTLIST}>
                             Shop
                         </Link>
                     </li>
                     {userInfo.isAdmin ? (
                         <>
-                            <li class="nav-item">
+                            <li className="nav-item">
                             <Link className="nav-link" to={paths.ADMINORDERS}>
                                     Admin
                                     {messageReceived && <span className="position-absolute top-3 start-10 translate-middle p-2 bg-danger border border-light rounded-circle"></span>}
                                 </Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                             <ul title={`${userInfo.name}`} className="nav-link" id="basic-nav-dropdown">
                                 <Link to={paths.USERPROFILE}><li eventKey={paths.USERPROFILE}>My Profile</li></Link>
                                 <Link onClick={() => dispatch(logout())}>Logout</Link>
@@ -119,7 +119,7 @@ function MobileHeaderComponent() {
                             </li>
                         </>
                     ) : userInfo.name && !userInfo.isAdmin ? (
-                            <li class="nav-item">
+                            <li className="nav-item">
                             <ul className="nav-link" title={`${userInfo.name} ${userInfo.lastName}`} id="basic-nav-dropdown">
                                 <Link to={paths.USERORDER}><li eventKey={paths.USERORDER}>My Orders</li></Link>
                             <Link to={paths.USERPROFILE}><li eventKey={paths.USERPROFILE}>My Profile</li></Link>
@@ -128,19 +128,19 @@ function MobileHeaderComponent() {
                                 </li>
                     ) : (
                                 <>
-                                    <li class="nav-item">
+                                    <li className="nav-item">
                                     <Link className="nav-link" to={paths.LOGIN}>
                                         Login
                                         </Link>
                                     </li>
-                                    <li class="nav-item">
+                                    <li className="nav-item">
                                     <Link className="nav-link" to={paths.REGISTER}>
                                 Register
                                         </Link>
                                     </li>
                         </>
                     )}
-                    <li class="nav-item">
+                    <li className="nav-item">
                     <Link className="nav-link" to={paths.CART}>
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-2 ms-1 me-1">
                                 {itemsCount === 0 ? "" : itemsCount}
@@ -166,23 +166,23 @@ function MobileHeaderComponent() {
             </div>
             <div className="collapse navbar-collapse2 bg-light" id="mobileContent1">
                 <ul className="p-2 navbar-nav">
-                    <li class="nav-item nav-link font-bold me-auto">
+                    <li className="nav-item nav-link font-bold me-auto">
                         Directions
                     </li>
-                    <li class="nav-item nav-link me-auto ms-2 mt-0 pt-0">
+                    <li className="nav-item nav-link me-auto ms-2 mt-0 pt-0">
                         130 N Main St Salem, Ut 84653
                     </li>
                 </ul>
             </div>
             <div className="collapse navbar-collapse2 bg-light" id="mobileContent2">
                 <ul className="p-2 navbar-nav">
-                    <li class="nav-item nav-link font-bold me-auto">
+                    <li className="nav-item nav-link font-bold me-auto">
                         Contact Us
                     </li>
-                    <li class="nav-item nav-link me-auto ms-2 mt-0 pt-0">
+                    <li className="nav-item nav-link me-auto ms-2 mt-0 pt-0">
                         Sales: (801) 500-0594
                     </li>
-                    <li class="nav-item nav-link me-auto ms-2 mt-0 pt-0">
+                    <li className="nav-item nav-link me-auto ms-2 mt-0 pt-0">
                         Service: (801) 310-8245
                     </li>
                 </ul>
