@@ -12,28 +12,28 @@ const ImageGallery = () => {
         <div className="container">
             <div className="row text-center text-lg-start mt-5 noSpace">
 
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep} alt="" />
                     </div>
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep1} alt="" />
                     </div>
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep2} alt="" />
                     </div>
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep3} alt="" />
                     </div>
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep4} alt="" />
                     </div>
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep5} alt="" />
                     </div>
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep6} alt="" />
                     </div>
-                <div className="col-lg-3 col-md-4 col-6 zoomOnHover">
+                <div className="col-lg-3 col-md-4 col-sm-2 col-6 zoomOnHover">
                         <img className="img-fluid img-thumbnail" src={Jeep7} alt="" />
                     </div>
                 
