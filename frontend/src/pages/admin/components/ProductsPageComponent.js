@@ -90,7 +90,7 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
                         <div className="row d-flex justify-content-center">
                             <div className="col-sm-4">
                                 </div>
-                                <Barcode value={item.barcode} format= 'CODE128' width= "2" height="45" fontSize="15"/>
+                                <Barcode value={item.barcode} format='CODE128' width={2} height={45} fontSize="15"/>
                         </div>
                         </PrintComponents>
                     </td>

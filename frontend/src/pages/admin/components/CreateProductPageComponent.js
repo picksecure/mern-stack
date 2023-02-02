@@ -166,7 +166,7 @@ const CreateProductPageComponent = ({
   }
 
     return (
-        <Container className="mb-5">
+        <Container className="mb-5 pb-5">
       <Row className="justify-content-md-center mt-5">
         <Col md={1}>
           <Link to="/admin/products" className="btn btn-outline-primary my-3">
