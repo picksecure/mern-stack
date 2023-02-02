@@ -9,6 +9,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { FaSearch } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
 import { BsFillTelephoneFill } from 'react-icons/bs';
+import { FaBars } from 'react-icons/fa';
 import { logout } from "../redux/actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../redux/actions/categoryActions";
@@ -73,7 +74,7 @@ function MobileHeaderComponent() {
             <nav className="row navbar navbar-light bg-light">
                 <div className="ms-5 col container-fluid">
                     <button className="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                        <FaBars />
                     </button>
                 </div>
                 <div className="col container-fluid">
