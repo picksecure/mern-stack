@@ -71,7 +71,7 @@ function MobileHeaderComponent() {
     
     return (
         <>
-            <nav className="row navbar navbar-light bg-light">
+            <nav className="row navbar navbar-light bg-light pt-3 pb-3">
                 <div className="ms-5 col container-fluid">
                     <button className="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <FaBars />
