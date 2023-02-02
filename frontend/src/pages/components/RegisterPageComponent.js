@@ -65,7 +65,7 @@ const RegisterPageComponent = ({
     };
     return (
         <Container fluid className="min-vh-100 w-100 color-main padding-bottom">
-            <Row className="margintop justify-content-md-center">
+            <Row className="ps-4 pe-4 pt-5 margintop justify-content-md-center">
                 <Col className="border p-3 color-white border-dark" md={3}>
                     <div className="text-center pb-3 mb-5 border-bottom">
                         <h1>Register</h1>

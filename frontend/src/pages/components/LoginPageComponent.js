@@ -46,7 +46,7 @@ const LoginPageComponent = ({ loginUserApiRequest, reduxDispatch, setReduxUserSt
 
     return (
         <Container fluid className="min-vh-100 w-100 color-main">
-            <Row className="margintop justify-content-md-center">
+            <Row className="margintop ps-4 pe-4 pt-5 justify-content-md-center">
                 <Col md={3} className="border p-3 color-white border-dark">
                     <div className="text-center pb-3 mb-5 border-bottom">
                         <h1>Login</h1>
