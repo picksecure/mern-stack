@@ -15,7 +15,6 @@ const position = {
     lat: 40.056750,
     lng: -111.672940
 }
-const inline = 1;
 const onLoad = marker => {
     console.log('marker: ', marker)
 }
@@ -24,7 +23,6 @@ function MapComponent() {
         <LoadScript
             googleMapsApiKey="AIzaSyCgRLdWEHVCZfJaiIvahlwkQZF6Cvq2TZg"
         >
-            {inline}
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
