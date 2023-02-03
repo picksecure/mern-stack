@@ -10,7 +10,7 @@ const cspConfigPolicy = {
     'script-src-elem': ["'self' 'unsafe-inline' https://maps.googleapis.com/"],
     'script-src': ["'self' 'unsafe-inline' https://maps.googleapis.com/"],
     'style-src': "'self' 'unsafe-inline'",
-    'style-src-elem': "'self' 'unsafe-inline'",
+    'style-src-elem': "'self' 'unsafe-inline' https://fonts.googleapis.com",
     'style-src-attr': "'self' 'unsafe-inline'"
 };
 
