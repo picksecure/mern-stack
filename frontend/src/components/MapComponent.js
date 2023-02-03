@@ -27,7 +27,6 @@ function MapComponent() {
                 mapContainerStyle={containerStyle}
                 center={center}
                 zoom={20}
-                nonce="58d545d4dx"
             >
                 <Marker
                     onLoad={onLoad}

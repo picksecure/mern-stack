@@ -5,6 +5,7 @@ const cspConfigPolicy = {
     'default-src': "'self'",
     'base-uri': "'self'",
     'object-src': "'none'",
+    'connect-src': "'self' 'https://maps.googleapis.com'",
     'img-src': "'self' data: *",
     'script-src-elem': ["'self' 'unsafe-inline' https://maps.googleapis.com/"],
     'script-src': ["'self' 'unsafe-inline' https://maps.googleapis.com/"],
