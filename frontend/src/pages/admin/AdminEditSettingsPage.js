@@ -37,7 +37,8 @@ const updateSettingsApiRequest = async(
     satHoursClServ,
     sunHoursOpServ,
     sunHoursClServ,
-    seoHelmentName
+    seoHelmentName,
+    seoHelmentTitle
 ) => {
     const { data } = await axios.put(`/api/settings/${settingsId}`, {
         tax,
@@ -70,7 +71,8 @@ const updateSettingsApiRequest = async(
         satHoursClServ,
         sunHoursOpServ,
         sunHoursClServ,
-        seoHelmentName
+        seoHelmentName,
+        seoHelmentTitle
     });
     return data;
 }

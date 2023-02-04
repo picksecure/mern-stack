@@ -52,6 +52,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
         const sunHoursOpServ = form.sunHoursOpServ.value;
         const sunHoursClServ = form.sunHoursClServ.value;
         const seoHelmentName = form.seoHelmentName.value;
+        const seoHelmentTitle = form.seoHelmentTitle.value;
 
         if (event.currentTarget.checkValidity() === true) {
             updateSettingsApiRequest(
@@ -86,7 +87,9 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                 satHoursClServ,
                 sunHoursOpServ,
                 sunHoursClServ,
-                seoHelmentName            )
+                seoHelmentName,
+                seoHelmentTitle
+            )
                 .then(data => {
                    
                         navigate("/admin/products");
@@ -138,6 +141,15 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 required
                                 type="text"
                                 defaultValue={setting.seoHelmentName}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitle">
+                            <Form.Label>Homepage Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitle"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitle}
                             />
                         </Form.Group>
                         <h4>Dr. Jeep Hours</h4>

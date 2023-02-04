@@ -39,6 +39,7 @@ const settingsSchema = mongoose.Schema({
     sunHoursOpServ: { type: String, required: false },
     sunHoursClServ: { type: String, required: false },
     seoHelmentName: { type: String, required: true },
+    seoHelmentTitle: {type: String, required: true },
 }, {
     timestamps: true,
 });
