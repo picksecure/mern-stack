@@ -5,10 +5,11 @@ const fetchSetting = async (settingsId) => {
     const { data } = await axios.get(`/api/settings/${settingsId}`);
     return data;
 }
-const updateSettingsApiRequest = async (
+const updateSettingsApiRequest = async(
     settingsId,
     tax,
     shipping,
+    
     monHoursOp,
     monHoursCl,
     tusHoursOp,
@@ -41,6 +42,7 @@ const updateSettingsApiRequest = async (
     const { data } = await axios.put(`/api/settings/${settingsId}`, {
         tax,
         shipping,
+       
         monHoursOp,
         monHoursCl,
         tusHoursOp,

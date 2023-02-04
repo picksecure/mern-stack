@@ -15,9 +15,9 @@ const position = {
     lat: 40.056750,
     lng: -111.672940
 }
-const onLoad = marker => {
-    console.log('marker: ', marker)
-}
+//const onLoad = marker => {
+ //   console.log('marker: ', marker)
+//}
 function MapComponent() {
     return (
         <LoadScript
@@ -29,7 +29,7 @@ function MapComponent() {
                 zoom={20}
             >
                 <Marker
-                    onLoad={onLoad}
+                   // onLoad={onLoad}
                     position={position}
                 />
                 <></>

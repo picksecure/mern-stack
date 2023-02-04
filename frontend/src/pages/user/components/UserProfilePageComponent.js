@@ -53,7 +53,7 @@ const UserProfilePageComponent = ({ updateUserApiRequest, fetchUser, userInfoFro
     setValidated(true);
   };
   return (
-    <Container>
+    <Container className="mb-5 pb-5">
       <Row className="mt-5 justify-content-md-center">
         <Col md={6}>
           <h1>Change your profile</h1>

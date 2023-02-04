@@ -37,7 +37,11 @@ const HomePageComponent = ({ fetchSetting, getBestsellers }) => {
     
   return (
     <>
-    <MetaComponent />
+          <MetaComponent
+              title='Dr Jeep | Used  Dealership in Salem, UT'
+              description='Dr Jeep sells and services  vehicles in the greater Salem UT area.'
+              name='Dr. Jeep LLC'
+              type='article'/>
           <ProductCarouselComponent bestSellers={bestSellers} />
           <Container>
               <Row xs={1} md={12}>

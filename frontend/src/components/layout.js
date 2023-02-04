@@ -1,4 +1,5 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import FooterComponent from './FooterComponent';
 import HeaderComponent from './HeaderComponent';
 import MobileHeaderComponent from './MobileHeaderComponent';
@@ -10,6 +11,7 @@ const Layout = ({ children }) => {
     const isPageWide1 = useMediaQuery('(max-width: 991px)')
   
     return (
+        <HelmetProvider>
         <div className="d-flex flex-column min-vh-100">
 
             {isPageWide && <HeaderComponent />}
@@ -19,6 +21,7 @@ const Layout = ({ children }) => {
             </div>
             <FooterComponent />
             </div>
+        </HelmetProvider>
     );
 };
 

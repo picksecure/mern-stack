@@ -9,7 +9,7 @@ const settingsSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-  
+   
         monHoursOp: { type: String, required: true },
         monHoursCl: { type: String, required: true },
         tusHoursOp: { type: String, required: true },
@@ -21,9 +21,9 @@ const settingsSchema = mongoose.Schema({
         friHoursOp: { type: String, required: true },
     friHoursCl: { type: String, required: true },
     satHoursOp: { type: String, required: false },
-    satHoursCl: { type: String, required: false },
+    satHoursCl: { type: String, },
     sunHoursOp: { type: String, required: false },
-    sunHoursCl: { type: String, required: false },
+    sunHoursCl: { type: String, },
 
     monHoursOpServ: { type: String, required: true },
     monHoursClServ: { type: String, required: true },
@@ -36,9 +36,9 @@ const settingsSchema = mongoose.Schema({
     friHoursOpServ: { type: String, required: true },
     friHoursClServ: { type: String, required: true },
     satHoursOpServ: { type: String, required: false },
-    satHoursClServ: { type: String, required: false },
+    satHoursClServ: { type: String, },
     sunHoursOpServ: { type: String, required: false },
-    sunHoursClServ: { type: String, required: false },
+    sunHoursClServ: { type: String, },
 }, {
     timestamps: true,
 });
