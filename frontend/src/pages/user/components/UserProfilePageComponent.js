@@ -86,7 +86,7 @@ const UserProfilePageComponent = ({ updateUserApiRequest, fetchUser, userInfoFro
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 disabled
-                value={user.email + "   if you want to change email, remove account and create new one with new email address"}
+                value={user.email}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPhone">
