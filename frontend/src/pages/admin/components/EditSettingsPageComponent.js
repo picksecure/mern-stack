@@ -135,15 +135,20 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
 
     return (
         <Container className="mb-5 pb-5">
-            <Row className="justify-content-md-center mt-5">
-                <Col md={1}>
+            <Row className="mt-5 mb-3">
+                <Col>
                     <Link to="/admin/products" className="btn btn-outline-primary my-3">
                         Go Back
                     </Link>
                 </Col>
-                <Col md={6}>
+                <Col className="text-center">
                     <h1>Edit Settings</h1>
+                </Col>
+                <Col></Col>
+            </Row>
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Row>
+                    <Col>
                         <Form.Group className="mb-3" controlId="formBasicTax">
                             <Form.Label>Tax:</Form.Label>
                             <Form.Control
@@ -163,6 +168,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 defaultValue={setting.shipping}
                             />
                         </Form.Group>
+                        <h5>Seo Settings</h5>
                         <Form.Group className="mb-3" controlId="formBasicSeoHelmentName">
                             <Form.Label>Business Name:</Form.Label>
                             <Form.Control
@@ -308,7 +314,8 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                             />
                         </Form.Group>
                         
-                       
+                    </Col>
+                    <Col>
                         
                         <h4>Dr. Jeep Hours</h4>
                         <Table size="sm">
@@ -671,7 +678,9 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 </tr>
                             </tbody>
                         </Table>
-                        
+                    </Col>
+
+                        </Row>
                         <div className="text-center">
                             <Button variant="outline-primary" type="submit">
                                 UPDATE
@@ -679,8 +688,6 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                         </div>
                         {updateSettingsResponseState.error ?? ""}
                     </Form>
-                </Col>
-            </Row>
         </Container>
     );
 };
