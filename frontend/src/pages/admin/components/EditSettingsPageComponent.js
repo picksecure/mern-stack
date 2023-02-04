@@ -266,7 +266,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                         <Form.Group className="mb-2" controlId="formBasicSatOpHours">
                                             <Form.Control
                                                 name="satHoursOp"
-                                                
+                                                required
                                                 type="text"
                                                 defaultValue={setting.satHoursOp}
                                             />
@@ -277,7 +277,6 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                         <Form.Group className="mb-2" controlId="formBasicSatClHours">
                                             <Form.Control
                                                 name="satHoursCl"
-                                                
                                                 type="text"
                                                 defaultValue={setting.satHoursCl}
                                             />

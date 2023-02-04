@@ -43,16 +43,17 @@ const HoursComponent = ({ setting }) => {
                             {setting.satHoursOp || setting.satHoursCl === "Closed" ? (
                                 <tr>
                                     <td>Saterday</td>
-                                    <td>{setting.satHoursOp}{setting.satHoursCl}</td>
+                                    <td>{setting.satHoursOp}</td>
                                 </tr>
-                            ) : (<tr>
+                            ) : (
+                                <tr>
                                 <td>Saterday</td>
                                 <td>{setting.satHoursOp} - {setting.satHoursCl}</td>
                             </tr>)}
                             {setting.satHoursOp || setting.satHoursCl === "Closed" ? (
                                 <tr>
                                     <td>Sunday </td>
-                                    <td>{setting.sunHoursOp}{setting.sunHoursCl}</td>
+                                    <td>{setting.sunHoursOp}</td>
                                 </tr>
                             ) : (
                                 <tr>
@@ -92,7 +93,7 @@ const HoursComponent = ({ setting }) => {
                             {setting.satHoursOpServ || setting.satHoursClServ === "Closed" ? (
                                 <tr>
                                     <td>Saterday</td>
-                                    <td>{setting.satHoursOpServ}{setting.satHoursClServ}</td>
+                                    <td>{setting.satHoursOpServ}</td>
                                 </tr>
                             ) : (<tr>
                                 <td>Saterday</td>
@@ -101,7 +102,7 @@ const HoursComponent = ({ setting }) => {
                             {setting.satHoursOpServ || setting.satHoursClServ === "Closed" ? (
                                 <tr>
                                     <td>Sunday </td>
-                                    <td>{setting.sunHoursOpServ}{setting.sunHoursClServ}</td>
+                                    <td>{setting.sunHoursOpServ}</td>
                                 </tr>
                             ) : (
                                 <tr>
