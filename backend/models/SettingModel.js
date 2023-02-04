@@ -9,7 +9,6 @@ const settingsSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-   
         monHoursOp: { type: String, required: true },
         monHoursCl: { type: String, required: true },
         tusHoursOp: { type: String, required: true },
@@ -39,6 +38,7 @@ const settingsSchema = mongoose.Schema({
     satHoursClServ: { type: String, required: false },
     sunHoursOpServ: { type: String, required: false },
     sunHoursClServ: { type: String, required: false },
+    seoHelmentName: { type: String, required: true },
 }, {
     timestamps: true,
 });

@@ -28,7 +28,6 @@ const adminUpdateSettings = async (req, res, next) => {
             satHoursCl,
             sunHoursOp,
             sunHoursCl,
-
             monHoursOpServ,
             monHoursClServ,
             tusHoursOpServ,
@@ -42,7 +41,8 @@ const adminUpdateSettings = async (req, res, next) => {
             satHoursOpServ,
             satHoursClServ,
             sunHoursOpServ,
-            sunHoursClServ
+            sunHoursClServ,
+            seoHelmentName
         } =
             req.body;
         settings.tax = tax || settings.tax;
@@ -76,6 +76,7 @@ const adminUpdateSettings = async (req, res, next) => {
         settings.satHoursClServ = satHoursClServ || settings.satHoursClServ;
         settings.sunHoursOpServ = sunHoursOpServ || settings.sunHoursOpServ;
         settings.sunHoursClServ = sunHoursClServ || settings.sunHoursClServ;
+        settings.seoHelmentName = seoHelmentName || settings.seoHelmentName;
         await settings.save();
         res.json({
             message: "setting updated",

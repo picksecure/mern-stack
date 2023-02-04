@@ -51,6 +51,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
         const satHoursClServ = form.satHoursClServ.value;
         const sunHoursOpServ = form.sunHoursOpServ.value;
         const sunHoursClServ = form.sunHoursClServ.value;
+        const seoHelmentName = form.seoHelmentName.value;
 
         if (event.currentTarget.checkValidity() === true) {
             updateSettingsApiRequest(
@@ -84,7 +85,8 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                 satHoursOpServ,
                 satHoursClServ,
                 sunHoursOpServ,
-                sunHoursClServ            )
+                sunHoursClServ,
+                seoHelmentName            )
                 .then(data => {
                    
                         navigate("/admin/products");
@@ -125,11 +127,19 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                             <Form.Control
                                 name="shipping"
                                 required
-                                type="text"
+                                type="number"
                                 defaultValue={setting.shipping}
                             />
                         </Form.Group>
-                       
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentName">
+                            <Form.Label>Business Name:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentName"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentName}
+                            />
+                        </Form.Group>
                         <h4>Dr. Jeep Hours</h4>
                         <Table size="sm">
 
@@ -491,6 +501,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 </tr>
                             </tbody>
                         </Table>
+                        
                         <div className="text-center">
                             <Button variant="outline-primary" type="submit">
                                 UPDATE
