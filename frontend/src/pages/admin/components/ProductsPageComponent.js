@@ -53,11 +53,7 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
                               Create new
                           </Button>
                       </LinkContainer>
-                      <LinkContainer className="ms-5" to="/admin/settings/63c9003882210e53d2640862" >
-                          <Button variant="outline-primary" size="lg">
-                             Edit Settings
-                          </Button>
-                      </LinkContainer>
+                      
                   </Col>
               </Row>
         <Table striped bordered hover responsive>

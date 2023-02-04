@@ -27,7 +27,10 @@ const AdminLinksComponent = () => {
               </LinkContainer>
               <LinkContainer to={paths.ADMINANALYTICS}>
           <Nav.Link>Analytics</Nav.Link>
-        </LinkContainer>
+              </LinkContainer>
+              <LinkContainer to="/admin/settings/63c9003882210e53d2640862">
+                  <Nav.Link>Settings</Nav.Link>
+              </LinkContainer>
         <Nav.Link onClick={() => dispatch(logout())}>Logout</Nav.Link>
       </Nav>
     </Navbar>
