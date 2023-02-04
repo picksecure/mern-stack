@@ -25,7 +25,8 @@ const ProductDetailsPageComponent = ({
     reduxDispatch,
     getProductDetails,
     userInfo,
-    writeReviewApiRequest
+    writeReviewApiRequest,
+    fetchSetting
 }) => {
     const { id } = useParams();
     const [quantity, setQuantity] = useState(1);
@@ -34,6 +35,7 @@ const ProductDetailsPageComponent = ({
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [productReviewed, setProductReviewed] = useState(false);
+    const [setting, setSetting] = useState([]);
 
     const messagesEndRef = useRef(null);
 
@@ -98,10 +100,18 @@ const ProductDetailsPageComponent = ({
                 .catch((er) => setProductReviewed(er.response.data.message ? er.response.data.message : er.response.data));
         }
     }
-
+    useEffect(() => {
+        fetchSetting()
+            .then((setting) => setSetting(setting))
+            .catch((er) => console.log(er));
+    }, [fetchSetting]);
     return (
         <>
-            <MetaComponent title={product.name} description={product.description} />
+            <MetaComponent
+                title={product.name}
+                description={product.description}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentType} />
             <Container>
                 <AddedToCartMessageComponent
                     showCartMessage={showCartMessage}

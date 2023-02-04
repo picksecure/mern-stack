@@ -43,7 +43,22 @@ const adminUpdateSettings = async (req, res, next) => {
             sunHoursOpServ,
             sunHoursClServ,
             seoHelmentName,
-            seoHelmentTitle
+            seoHelmentTitle,
+            seoHelmentDescription,
+            seoHelmentType,
+            seoHelmentTitleProduct,
+            seoHelmentDescriptionProduct,
+            seoHelmentTypeProduct,
+            seoHelmentTitleGallery,
+            seoHelmentDescriptionGallery,
+            seoHelmentTypeGallery,
+            seoHelmentTitleLogin,
+            seoHelmentDescriptionLogin,
+            seoHelmentTypeLogin,
+            seoHelmentTitleRegister,
+            seoHelmentDescriptionRegister,
+            seoHelmentTypeRegister,
+     
         } =
             req.body;
         settings.tax = tax || settings.tax;
@@ -78,7 +93,28 @@ const adminUpdateSettings = async (req, res, next) => {
         settings.sunHoursOpServ = sunHoursOpServ || settings.sunHoursOpServ;
         settings.sunHoursClServ = sunHoursClServ || settings.sunHoursClServ;
         settings.seoHelmentName = seoHelmentName || settings.seoHelmentName;
+
         settings.seoHelmentTitle = seoHelmentTitle || settings.seoHelmentTitle;
+        settings.seoHelmentDescription = seoHelmentDescription || settings.seoHelmentDescription;
+        settings.seoHelmentType = seoHelmentType || settings.seoHelmentType;
+
+        settings.seoHelmentTitleProduct = seoHelmentTitleProduct || settings.seoHelmentTitleProduct;
+        settings.seoHelmentDescriptionProduct = seoHelmentDescriptionProduct || settings.seoHelmentDescriptionProduct;
+        settings.seoHelmentTypeProduct = seoHelmentTypeProduct || settings.seoHelmentTypeProduct;
+
+        settings.seoHelmentTitleGallery = seoHelmentTitleGallery || settings.seoHelmentTitleGallery;
+        settings.seoHelmentDescriptionGallery = seoHelmentDescriptionGallery || settings.seoHelmentDescriptionGallery;
+        settings.seoHelmentTypeGallery = seoHelmentTypeGallery || settings.seoHelmentTypeGallery;
+
+        settings.seoHelmentTitleLogin = seoHelmentTitleLogin || settings.seoHelmentTitleLogin;
+        settings.seoHelmentDescriptionLogin = seoHelmentDescriptionLogin || settings.seoHelmentDescriptionLogin;
+        settings.seoHelmentTypeLogin = seoHelmentTypeLogin || settings.seoHelmentTypeLogin;
+
+        settings.seoHelmentTitleRegister = seoHelmentTitleRegister || settings.seoHelmentTitleRegister;
+        settings.seoHelmentDescriptionRegister = seoHelmentDescriptionRegister || settings.seoHelmentDescriptionRegister;
+        settings.seoHelmentTypeRegister = seoHelmentTypeRegister || settings.seoHelmentTypeRegister;
+
+      
         await settings.save();
         res.json({
             message: "setting updated",

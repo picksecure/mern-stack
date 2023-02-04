@@ -1,16 +1,25 @@
 import { Container, Row, Col, Alert, ListGroup, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import CartItemComponent from "../../components/CartItemComponent";
+import MetaComponent from "../../components/MetaComponent";
 import paths from '../../router/paths';
+import { useState, useEffect } from "react";
 
 const CartPageComponent = ({
     addToCart,
     removeFromCart,
     cartItems,
     cartSubtotal,
+    fetchSetting,
     reduxDispatch,
 }) => {
+    const [setting, setSetting] = useState([]);
 
+    useEffect(() => {
+        fetchSetting()
+            .then((setting) => setSetting(setting))
+            .catch((er) => console.log(er));
+    }, [fetchSetting]);
     const changeCount = (productID, count) => {
         reduxDispatch(addToCart(productID, count));
     };
@@ -24,6 +33,11 @@ const CartPageComponent = ({
    
     return (
         <Container className="padding-mobile" fluid>
+            <MetaComponent
+                title={setting.seoHelmentTitleCart}
+                description={setting.seoHelmentDescriptionCart}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentTypeCart} />
             <Row className="mt-5 pt-5 me-2">
                 <Col md={8}>
                     <h1>Shopping Cart</h1>

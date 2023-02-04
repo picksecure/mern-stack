@@ -53,6 +53,20 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
         const sunHoursClServ = form.sunHoursClServ.value;
         const seoHelmentName = form.seoHelmentName.value;
         const seoHelmentTitle = form.seoHelmentTitle.value;
+        const seoHelmentDescription = form.seoHelmentDescription.value;
+        const seoHelmentType = form.seoHelmentType.value;
+        const seoHelmentTitleProduct = form.seoHelmentTitleProduct.value;
+        const seoHelmentDescriptionProduct = form.seoHelmentDescriptionProduct.value;
+        const seoHelmentTypeProduct = form.seoHelmentTypeProduct.value;
+        const seoHelmentTitleGallery = form.seoHelmentTitleGallery.value;
+        const seoHelmentDescriptionGallery = form.seoHelmentDescriptionGallery.value;
+        const seoHelmentTypeGallery = form.seoHelmentTypeGallery.value;
+        const seoHelmentTitleLogin = form.seoHelmentTitleLogin.value;
+        const seoHelmentDescriptionLogin = form.seoHelmentDescriptionLogin.value;
+        const seoHelmentTypeLogin = form.seoHelmentTypeLogin.value;
+        const seoHelmentTitleRegister = form.seoHelmentTitleRegister.value;
+        const seoHelmentDescriptionRegister = form.seoHelmentDescriptionRegister.value;
+        const seoHelmentTypeRegister = form.seoHelmentTypeRegister.value;
 
         if (event.currentTarget.checkValidity() === true) {
             updateSettingsApiRequest(
@@ -88,7 +102,22 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                 sunHoursOpServ,
                 sunHoursClServ,
                 seoHelmentName,
-                seoHelmentTitle
+                seoHelmentTitle,
+                seoHelmentDescription,
+                seoHelmentType,
+                seoHelmentTitleProduct,
+                seoHelmentDescriptionProduct,
+                seoHelmentTypeProduct,
+                seoHelmentTitleGallery,
+                seoHelmentDescriptionGallery,
+                seoHelmentTypeGallery,
+                seoHelmentTitleLogin,
+                seoHelmentDescriptionLogin,
+                seoHelmentTypeLogin,
+                seoHelmentTitleRegister,
+                seoHelmentDescriptionRegister,
+                seoHelmentTypeRegister,
+                
             )
                 .then(data => {
                    
@@ -152,6 +181,135 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 defaultValue={setting.seoHelmentTitle}
                             />
                         </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescription">
+                            <Form.Label>Homepage Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescription"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescription}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentType">
+                            <Form.Label>Homepage type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentType"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentType}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleProduct">
+                            <Form.Label>Product List Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleProduct"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleProduct}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionProduct">
+                            <Form.Label>Product List Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionProduct"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionProduct}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeProduct">
+                            <Form.Label>Product-List Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeProduct"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeProduct}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleGallery">
+                            <Form.Label>Custom-Build Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleGallery"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleGallery}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionGallery">
+                            <Form.Label>Custom-Build Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionGallery"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionGallery}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeGallery">
+                            <Form.Label>Custom-Build Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeGallery"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeGallery}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleLogin">
+                            <Form.Label>Login-Page Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleLogin"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleLogin}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionLogin">
+                            <Form.Label>Login-page Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionLogin"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionLogin}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeLogin">
+                            <Form.Label>Login-Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeLogin"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeLogin}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleRegister">
+                            <Form.Label>Register-Page Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleRegister"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleRegister}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionRegister">
+                            <Form.Label>Register-page Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionRegister"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionRegister}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeRegister">
+                            <Form.Label>Register-Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeRegister"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeRegister}
+                            />
+                        </Form.Group>
+                        
+                       
+                        
                         <h4>Dr. Jeep Hours</h4>
                         <Table size="sm">
 

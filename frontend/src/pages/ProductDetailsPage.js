@@ -21,9 +21,12 @@ const ProductDetailsPage = () => {
     const dispatch = useDispatch()
 
     const userInfo = useSelector((state) => state.userRegisterLogin.userInfo);
+    const fetchSetting = async () => {
+        const { data } = await axios.get(`/api/settings/63c9003882210e53d2640862`);
+        return data;
+    }
 
-
-  return <ProductDetailsPageComponent  addToCartReduxAction={addToCart} reduxDispatch={dispatch} getProductDetails={getProductDetails} userInfo={userInfo}  writeReviewApiRequest={writeReviewApiRequest} />;
+    return <ProductDetailsPageComponent fetchSetting={fetchSetting} addToCartReduxAction={addToCart} reduxDispatch={dispatch} getProductDetails={getProductDetails} userInfo={userInfo} writeReviewApiRequest={writeReviewApiRequest} />;
 };
 
 export default ProductDetailsPage;

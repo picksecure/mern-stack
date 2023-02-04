@@ -16,9 +16,14 @@ const registerUserApiRequest = async (name, lastName, email, password) => {
 };
 
 const RegisterPage = () => {
-  const reduxDispatch = useDispatch();
+    const reduxDispatch = useDispatch();
+    const fetchSetting = async () => {
+        const { data } = await axios.get(`/api/settings/63c9003882210e53d2640862`);
+        return data;
+    }
   return (
-    <RegisterPageComponent
+      <RegisterPageComponent
+          fetchSetting={fetchSetting}
       registerUserApiRequest={registerUserApiRequest}
       reduxDispatch={reduxDispatch}
       setReduxUserState={setReduxUserState}

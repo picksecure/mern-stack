@@ -39,7 +39,27 @@ const settingsSchema = mongoose.Schema({
     sunHoursOpServ: { type: String, required: false },
     sunHoursClServ: { type: String, required: false },
     seoHelmentName: { type: String, required: true },
-    seoHelmentTitle: {type: String, required: true },
+    seoHelmentTitle: { type: String, required: true },
+    seoHelmentDescription: { type: String, required: true },
+    seoHelmentType: { type: String, required: true },
+
+    seoHelmentTitleProduct: { type: String, required: true },
+    seoHelmentDescriptionProduct: { type: String, required: true },
+    seoHelmentTypeProduct: { type: String, required: true },
+
+    seoHelmentTitleGallery: { type: String, required: true },
+    seoHelmentDescriptionGallery: { type: String, required: true },
+    seoHelmentTypeGallery: { type: String, required: true },
+
+    seoHelmentTitleLogin: { type: String, required: true },
+    seoHelmentDescriptionLogin: { type: String, required: true },
+    seoHelmentTypeLogin: { type: String, required: true },
+
+    seoHelmentTitleRegister: { type: String, required: true },
+    seoHelmentDescriptionRegister: { type: String, required: true },
+    seoHelmentTypeRegister: { type: String, required: true },
+
+    
 }, {
     timestamps: true,
 });

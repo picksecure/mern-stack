@@ -1,13 +1,17 @@
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import paths from "../../router/paths";
+import MetaComponent from "../../components/MetaComponent";
 const RegisterPageComponent = ({
     registerUserApiRequest,
     reduxDispatch,
     setReduxUserState,
+    fetchSetting
 }) => {
+    const [setting, setSetting] = useState([]);
+
     const [validated, setValidated] = useState(false);
     const [registerUserResponseState, setRegisterUserResponseState] = useState({
         success: "",
@@ -25,7 +29,11 @@ const RegisterPageComponent = ({
             setPasswordsMatchState(false);
         }
     };
-
+    useEffect(() => {
+        fetchSetting()
+            .then((setting) => setSetting(setting))
+            .catch((er) => console.log(er));
+    }, [fetchSetting]);
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -65,6 +73,11 @@ const RegisterPageComponent = ({
     };
     return (
         <Container fluid className="min-vh-100 w-100 color-main padding-bottom">
+            <MetaComponent
+                title={setting.seoHelmentTitleRegister}
+                description={setting.seoHelmentDescriptionRegister}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentTypeRegister} />
             <Row className="ps-4 pe-4 pt-5 margintop justify-content-md-center">
                 <Col className="border p-3 color-white border-dark" md={3}>
                     <div className="text-center pb-3 mb-5 border-bottom">

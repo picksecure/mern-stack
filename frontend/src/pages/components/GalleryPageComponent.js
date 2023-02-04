@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ContactComponent from "../../components/ContactComponent";
 import CustomBuildsGallery from "../../components/CustomBuildsGallery";
+import MetaComponent from "../../components/MetaComponent";
 
 const GalleryPageComponent = ({ fetchSetting, newMessage}) => {
     const [setting, setSetting] = useState([]);
@@ -13,6 +14,11 @@ const GalleryPageComponent = ({ fetchSetting, newMessage}) => {
     
     return (
         <>
+            <MetaComponent
+                title={setting.seoHelmentTitleGallery}
+                description={setting.seoHelmentDescriptionGallery}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentTypeGallery} />
             <Container className="mt-5 mb-5 pb-5">
                 <Row xs={1} md={12} className="text-center">
                     <h1 className="display3">Check Out Our Custom Builds</h1>

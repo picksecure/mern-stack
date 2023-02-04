@@ -38,7 +38,25 @@ const updateSettingsApiRequest = async(
     sunHoursOpServ,
     sunHoursClServ,
     seoHelmentName,
-    seoHelmentTitle
+    seoHelmentTitle,
+    seoHelmentDescription,
+    seoHelmentType,
+    seoHelmentTitleProduct,
+    seoHelmentDescriptionProduct,
+    seoHelmentTypeProduct,
+    seoHelmentTitleGallery,
+    seoHelmentDescriptionGallery,
+    seoHelmentTypeGallery,
+    seoHelmentTitleLogin,
+    seoHelmentDescriptionLogin,
+    seoHelmentTypeLogin,
+    seoHelmentTitleRegister,
+    seoHelmentDescriptionRegister,
+    seoHelmentTypeRegister,
+    seoHelmentTitleFound,
+    seoHelmentDescriptionFound,
+    seoHelmentTypeFound,
+
 ) => {
     const { data } = await axios.put(`/api/settings/${settingsId}`, {
         tax,
@@ -72,7 +90,25 @@ const updateSettingsApiRequest = async(
         sunHoursOpServ,
         sunHoursClServ,
         seoHelmentName,
-        seoHelmentTitle
+        seoHelmentTitle,
+        seoHelmentDescription,
+        seoHelmentType,
+        seoHelmentTitleProduct,
+        seoHelmentDescriptionProduct,
+        seoHelmentTypeProduct,
+        seoHelmentTitleGallery,
+        seoHelmentDescriptionGallery,
+        seoHelmentTypeGallery,
+        seoHelmentTitleLogin,
+        seoHelmentDescriptionLogin,
+        seoHelmentTypeLogin,
+        seoHelmentTitleRegister,
+        seoHelmentDescriptionRegister,
+        seoHelmentTypeRegister,
+        seoHelmentTitleFound,
+        seoHelmentDescriptionFound,
+        seoHelmentTypeFound,
+    
     });
     return data;
 }

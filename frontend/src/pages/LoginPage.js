@@ -11,10 +11,13 @@ const loginUserApiRequest = async (email, password, doNotLogout) => {
 
 }
 const LoginPage = () => {
-
+    const fetchSetting = async () => {
+        const { data } = await axios.get(`/api/settings/63c9003882210e53d2640862`);
+        return data;
+    }
     const reduxDispatch = useDispatch();
-  
-  return <LoginPageComponent loginUserApiRequest={loginUserApiRequest} reduxDispatch={reduxDispatch} setReduxUserState={setReduxUserState} />
+
+    return <LoginPageComponent fetchSetting={fetchSetting} loginUserApiRequest={loginUserApiRequest} reduxDispatch={reduxDispatch} setReduxUserState={setReduxUserState} />
 };
 
 export default LoginPage;

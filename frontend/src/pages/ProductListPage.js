@@ -49,10 +49,13 @@ const getProducts = async (categoryName = "", pageNumParam = null, searchQuery =
 }
 
 const ProductListPage = () => {
-
+    const fetchSetting = async () => {
+        const { data } = await axios.get(`/api/settings/63c9003882210e53d2640862`);
+        return data;
+    }
     const { categories } = useSelector((state) => state.getCategories);
 
-  return <ProductListPageComponent getProducts={getProducts} categories={categories} />;
+    return <ProductListPageComponent fetchSetting={fetchSetting} getProducts={getProducts} categories={categories} />;
 };
 
 export default ProductListPage;

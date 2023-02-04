@@ -9,14 +9,16 @@ import AttributesFilterComponent from "../../components/filterQueryResultOptions
 
 import { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
+import MetaComponent from "../../components/MetaComponent";
 
-const ProductListPageComponent = ({ getProducts, categories }) => {
+const ProductListPageComponent = ({ getProducts, categories, fetchSetting }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [attrsFilter, setAttrsFilter] = useState([]); // collect category attributes from db and show on the webpage
   const [attrsFromFilter, setAttrsFromFilter] = useState([]); // collect user filters for category attributes
   const [showResetFiltersButton, setShowResetFiltersButton] = useState(false);
+    const [setting, setSetting] = useState([]);
 
   const [filters, setFilters] = useState({}); // collect all filters
   const [price, setPrice] = useState(500);
@@ -90,7 +92,11 @@ const ProductListPageComponent = ({ getProducts, categories }) => {
       attrs: attrsFromFilter,
     });
   };
-
+    useEffect(() => {
+        fetchSetting()
+            .then((setting) => setSetting(setting))
+            .catch((er) => console.log(er));
+    }, [fetchSetting]);
   const resetFilters = () => {
     setShowResetFiltersButton(false);
     setFilters({});
@@ -98,7 +104,12 @@ const ProductListPageComponent = ({ getProducts, categories }) => {
   };
 
   return (
-    <Container className="mb-5 pb-5" fluid>
+      <Container className="mb-5 pb-5" fluid>
+          <MetaComponent
+              title={setting.seoHelmentTitleProduct}
+              description={setting.seoHelmentDescriptionProduct}
+              name={setting.seoHelmentName}
+              type={setting.seoHelmentTypeProduct} />
       <Row>
         <Col md={3}>
           <ListGroup variant="flush">
