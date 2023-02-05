@@ -3,10 +3,17 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BsCheckLg } from 'react-icons/bs';
 import { BsXLg } from 'react-icons/bs';
+import MetaComponent from "../../../components/MetaComponent";
 
-const UserOrdersPageComponent = ({getOrders}) => {
+const UserOrdersPageComponent = ({ getOrders, fetchSetting }) => {
     const [orders, setOrders] = useState([]);
+    const [setting, setSetting] = useState([]);
 
+    useEffect(() => {
+        fetchSetting()
+            .then((setting) => setSetting(setting))
+            .catch((er) => console.log(er));
+    }, [fetchSetting]);
     useEffect(() => {
         getOrders()
         .then(orders => setOrders(orders))
@@ -14,7 +21,12 @@ const UserOrdersPageComponent = ({getOrders}) => {
     }, [getOrders])
 
   return (
-    <Row className="m-5">
+      <Row className="m-5">
+          <MetaComponent
+              title={setting.seoHelmentTitleUserOrders}
+              description={setting.seoHelmentDescriptionUserOrders}
+              name={setting.seoHelmentName}
+              type={setting.seoHelmentTypeUserOrders} />
       <Col md={12}>
         <h1>My Orders</h1>
         <Table striped bordered hover>

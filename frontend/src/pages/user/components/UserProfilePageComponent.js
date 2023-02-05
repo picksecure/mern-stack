@@ -1,13 +1,21 @@
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import MetaComponent from "../../../components/MetaComponent";
 
 
-const UserProfilePageComponent = ({ updateUserApiRequest, fetchUser, userInfoFromRedux, setReduxUserState, reduxDispatch, localStorage, sessionStorage }) => {
+const UserProfilePageComponent = ({ updateUserApiRequest, fetchSetting, fetchUser, userInfoFromRedux, setReduxUserState, reduxDispatch, localStorage, sessionStorage }) => {
   const [validated, setValidated] = useState(false);
   const [updateUserResponseState, setUpdateUserResponseState] = useState({ success: "", error: "" });
   const [passwordsMatchState, setPasswordsMatchState] = useState(true);
   const [user, setUser] = useState({})
   const userInfo = userInfoFromRedux;
+  const [setting, setSetting] = useState([]);
+  
+    useEffect(() => {
+        fetchSetting()
+            .then((setting) => setSetting(setting))
+            .catch((er) => console.log(er));
+    }, [fetchSetting]);
 
   useEffect(() => {
       fetchUser(userInfo._id)
@@ -53,7 +61,12 @@ const UserProfilePageComponent = ({ updateUserApiRequest, fetchUser, userInfoFro
     setValidated(true);
   };
   return (
-    <Container className="mb-5 pb-5">
+      <Container className="mb-5 pb-5">
+          <MetaComponent
+              title={setting.seoHelmentTitleUserProfile}
+              description={setting.seoHelmentDescriptionUserProfile}
+              name={setting.seoHelmentName}
+              type={setting.seoHelmentTypeUserProfile} />
       <Row className="mt-5 justify-content-md-center">
         <Col md={6}>
           <h1>Change your profile</h1>

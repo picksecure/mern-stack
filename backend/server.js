@@ -7,7 +7,10 @@ const fileUpload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 const app = express();
 
-app.use(helmet())
+app.use(helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false
+}))
 
 const httpServer = createServer(app);
 global.io = new Server(httpServer);
@@ -75,11 +78,7 @@ io.on("connection", (socket) => {
 
 const apiRoutes = require("./routes/apiRoutes");
 
-app.use(function (req, res, next) {
-    res.header("Cross-Origin-Embedder-Policy", "credentialless");
-    //res.header("Cross-Origin-Opener-Policy", "same-origin");
-    next();
-});
+
 
 // mongodb connection
 const connectDB = require("./config/db");
@@ -96,6 +95,7 @@ if (process.env.NODE_ENV === "production") {
         res.json({ message: "API running..." });
     })
 }
+
 app.use((error, req, res, next) => {
     if (process.env.NODE_ENV === "development") {
         console.error(error);
@@ -118,4 +118,3 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-

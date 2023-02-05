@@ -64,6 +64,12 @@ const adminUpdateSettings = async (req, res, next) => {
             seoHelmentTitleFound,
             seoHelmentDescriptionFound,
             seoHelmentTypeFound,
+            seoHelmentTitleUserProfile,
+            seoHelmentDescriptionUserProfile,
+            seoHelmentTypeUserProfile,
+            seoHelmentTitleUserOrders,
+            seoHelmentDescriptionUserOrders,
+            seoHelmentTypeUserOrders,
      
         } =
             req.body;
@@ -127,6 +133,14 @@ const adminUpdateSettings = async (req, res, next) => {
         settings.seoHelmentTitleFound = seoHelmentTitleFound || settings.seoHelmentTitleFound;
         settings.seoHelmentDescriptionFound = seoHelmentDescriptionFound || settings.seoHelmentDescriptionFound;
         settings.seoHelmentTypeFound = seoHelmentTypeFound || settings.seoHelmentTypeFound;
+
+        settings.seoHelmentTitleUserProfile = seoHelmentTitleUserProfile || settings.seoHelmentTitleUserProfile;
+        settings.seoHelmentDescriptionUserProfile = seoHelmentDescriptionUserProfile || settings.seoHelmentDescriptionUserProfile;
+        settings.seoHelmentTypeUserProfile = seoHelmentTypeUserProfile || settings.seoHelmentTypeUserProfile;
+
+        settings.seoHelmentTitleUserOrders = seoHelmentTitleUserOrders || settings.seoHelmentTitleUserOrders;
+        settings.seoHelmentDescriptionUserOrders = seoHelmentDescriptionUserOrders || settings.seoHelmentDescriptionUserOrders;
+        settings.seoHelmentTypeUserOrders = seoHelmentTypeUserOrders || settings.seoHelmentTypeUserOrders;
 
         await settings.save();
         res.json({

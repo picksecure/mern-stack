@@ -36,9 +36,14 @@ const fetchUser = async (id) => {
 const UserProfilePage = () => {
   const reduxDispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.userRegisterLogin);
+    const fetchSetting = async () => {
+        const { data } = await axios.get(`/api/settings/63c9003882210e53d2640862`);
+        return data;
+    }
 
   return (
-    <UserProfilePageComponent
+      <UserProfilePageComponent
+          fetchSetting={fetchSetting}
       updateUserApiRequest={updateUserApiRequest}
       fetchUser={fetchUser}
       userInfoFromRedux={userInfo}
