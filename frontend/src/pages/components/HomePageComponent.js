@@ -1,7 +1,6 @@
 import ProductCarouselComponent from "../../components/ProductCarouselComponent";
 //import CategoryCardComponent from "../../components/CategoryCardComponent";
 import { Row, Container, Col, Button } from "react-bootstrap";
-
 import { useEffect, useState } from "react";
 import MetaComponent from "../../components/MetaComponent";
 import ImageGallery from "../../components/ImageGallery";

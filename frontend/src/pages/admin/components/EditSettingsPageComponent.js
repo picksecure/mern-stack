@@ -67,6 +67,12 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
         const seoHelmentTitleRegister = form.seoHelmentTitleRegister.value;
         const seoHelmentDescriptionRegister = form.seoHelmentDescriptionRegister.value;
         const seoHelmentTypeRegister = form.seoHelmentTypeRegister.value;
+        const seoHelmentTitleCart = form.seoHelmentTitleCart.value;
+        const seoHelmentDescriptionCart = form.seoHelmentDescriptionCart.value;
+        const seoHelmentTypeCart = form.seoHelmentTypeCart.value;
+        const seoHelmentTitleFound = form.seoHelmentTitleFound.value;
+        const seoHelmentDescriptionFound = form.seoHelmentDescriptionFound.value;
+        const seoHelmentTypeFound = form.seoHelmentTypeFound.value;
 
         if (event.currentTarget.checkValidity() === true) {
             updateSettingsApiRequest(
@@ -117,6 +123,12 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                 seoHelmentTitleRegister,
                 seoHelmentDescriptionRegister,
                 seoHelmentTypeRegister,
+                seoHelmentTitleCart,
+                seoHelmentDescriptionCart,
+                seoHelmentTypeCart,
+                seoHelmentTitleFound,
+                seoHelmentDescriptionFound,
+                seoHelmentTypeFound
                 
             )
                 .then(data => {
@@ -149,25 +161,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row>
                     <Col>
-                        <Form.Group className="mb-3" controlId="formBasicTax">
-                            <Form.Label>Tax:</Form.Label>
-                            <Form.Control
-                                name="tax"
-                                required
-                                type="text"
-                                defaultValue={setting.tax}
-                            />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicShipping">
-                            <Form.Label>Shipping:</Form.Label>
-                            <Form.Control
-                                name="shipping"
-                                required
-                                type="number"
-                                defaultValue={setting.shipping}
-                            />
-                        </Form.Group>
+                       
                         <h5>Seo Settings</h5>
                         <Form.Group className="mb-3" controlId="formBasicSeoHelmentName">
                             <Form.Label>Business Name:</Form.Label>
@@ -313,10 +307,82 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 defaultValue={setting.seoHelmentTypeRegister}
                             />
                         </Form.Group>
-                        
+
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleCart">
+                            <Form.Label>Cart-Page Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleCart"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleCart}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionCart">
+                            <Form.Label>Cart-page Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionCart"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionCart}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeCart">
+                            <Form.Label>Cart-Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeCart"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeCart}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleFound">
+                            <Form.Label>404-Page Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleFound"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleFound}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionFound">
+                            <Form.Label>404-page Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionFound"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionFound}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeFound">
+                            <Form.Label>404-Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeFound"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeFound}
+                            />
+                        </Form.Group>
                     </Col>
                     <Col>
-                        
+                        <Form.Group className="mb-3" controlId="formBasicTax">
+                            <Form.Label>Tax:</Form.Label>
+                            <Form.Control
+                                name="tax"
+                                required
+                                type="text"
+                                defaultValue={setting.tax}
+                            />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicShipping">
+                            <Form.Label>Shipping:</Form.Label>
+                            <Form.Control
+                                name="shipping"
+                                required
+                                type="number"
+                                defaultValue={setting.shipping}
+                            />
+                        </Form.Group>
                         <h4>Dr. Jeep Hours</h4>
                         <Table size="sm">
 

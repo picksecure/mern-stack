@@ -58,6 +58,12 @@ const adminUpdateSettings = async (req, res, next) => {
             seoHelmentTitleRegister,
             seoHelmentDescriptionRegister,
             seoHelmentTypeRegister,
+            seoHelmentTitleCart,
+            seoHelmentDescriptionCart,
+            seoHelmentTypeCart,
+            seoHelmentTitleFound,
+            seoHelmentDescriptionFound,
+            seoHelmentTypeFound,
      
         } =
             req.body;
@@ -114,7 +120,14 @@ const adminUpdateSettings = async (req, res, next) => {
         settings.seoHelmentDescriptionRegister = seoHelmentDescriptionRegister || settings.seoHelmentDescriptionRegister;
         settings.seoHelmentTypeRegister = seoHelmentTypeRegister || settings.seoHelmentTypeRegister;
 
-      
+        settings.seoHelmentTitleCart = seoHelmentTitleCart || settings.seoHelmentTitleCart;
+        settings.seoHelmentDescriptionCart = seoHelmentDescriptionCart || settings.seoHelmentDescriptionCart;
+        settings.seoHelmentTypeCart = seoHelmentTypeCart || settings.seoHelmentTypeCart;
+
+        settings.seoHelmentTitleFound = seoHelmentTitleFound || settings.seoHelmentTitleFound;
+        settings.seoHelmentDescriptionFound = seoHelmentDescriptionFound || settings.seoHelmentDescriptionFound;
+        settings.seoHelmentTypeFound = seoHelmentTypeFound || settings.seoHelmentTypeFound;
+
         await settings.save();
         res.json({
             message: "setting updated",

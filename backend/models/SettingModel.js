@@ -59,7 +59,13 @@ const settingsSchema = mongoose.Schema({
     seoHelmentDescriptionRegister: { type: String, required: true },
     seoHelmentTypeRegister: { type: String, required: true },
 
-    
+    seoHelmentTitleCart: { type: String, required: true },
+    seoHelmentDescriptionCart: { type: String, required: true },
+    seoHelmentTypeCart: { type: String, required: true },
+
+    seoHelmentTitleFound: { type: String, required: true },
+    seoHelmentDescriptionFound: { type: String, required: true },
+    seoHelmentTypeFound: { type: String, required: true },
 }, {
     timestamps: true,
 });
