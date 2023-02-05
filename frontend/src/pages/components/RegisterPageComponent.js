@@ -157,7 +157,7 @@ const RegisterPageComponent = ({
                         <Row className="pb-2 text-center">
                             <Col>
                                 Do you have an account already?
-                                <Link to={paths.LOGIN}> Login </Link>
+                                <Link className="ms-2" to={paths.LOGIN}> Login </Link>
                             </Col>
                         </Row>
                         <div className="text-center mb-3 mt-3">
