@@ -3,10 +3,10 @@ import $ from 'jquery';
 
 const HoursComponent = ({ setting }) => {
     $(document).ready(function () {
-        $('.opening-hours tr').eq(new Date().getDay()).addClass('today');
+        $('.opening-hours tr').eq(new Date().getDay() - 1).addClass('today');
     });
     $(document).ready(function () {
-        $('.opening-hours1 tr').eq(new Date().getDay()).addClass('today');
+        $('.opening-hours1 tr').eq(new Date().getDay() - 1).addClass('today');
     });
     $(document).ready(function () {
         $('.opening-hours2 tr').eq(new Date().getDay()).addClass('today');
