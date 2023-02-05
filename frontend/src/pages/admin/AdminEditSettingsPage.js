@@ -65,6 +65,12 @@ const updateSettingsApiRequest = async(
     seoHelmentTitleUserOrders,
     seoHelmentDescriptionUserOrders,
     seoHelmentTypeUserOrders,
+    seoHelmentTitleUserOrdersDetail,
+    seoHelmentDescriptionUserOrdersDetail,
+    seoHelmentTypeUserOrdersDetail,
+    seoHelmentTitleUserCartDetail,
+    seoHelmentDescriptionUserCartDetail,
+    seoHelmentTypeUserCartDetail,
 
 ) => {
     const { data } = await axios.put(`/api/settings/${settingsId}`, {
@@ -125,7 +131,13 @@ const updateSettingsApiRequest = async(
         seoHelmentTypeUserProfile,
         seoHelmentTitleUserOrders,
         seoHelmentDescriptionUserOrders,
-        seoHelmentTypeUserOrders
+        seoHelmentTypeUserOrders,
+        seoHelmentTitleUserOrdersDetail,
+        seoHelmentDescriptionUserOrdersDetail,
+        seoHelmentTypeUserOrdersDetail,
+        seoHelmentTitleUserCartDetail,
+        seoHelmentDescriptionUserCartDetail,
+        seoHelmentTypeUserCartDetail
     
     });
     return data;

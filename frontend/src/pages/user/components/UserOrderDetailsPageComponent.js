@@ -9,6 +9,7 @@ import {
 import CartItemComponent from "../../../components/CartItemComponent";
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import MetaComponent from "../../../components/MetaComponent";
 
 const UserOrderDetailsPageComponent = ({
   userInfo,
@@ -33,7 +34,13 @@ const UserOrderDetailsPageComponent = ({
 
 
   const { id } = useParams();
-    
+    const [setting, setSetting] = useState([]);
+
+    useEffect(() => {
+        fetchSetting()
+            .then((setting) => setSetting(setting))
+            .catch((er) => console.log(er));
+    }, [fetchSetting]);
   useEffect(() => {
     getUser()
       .then((data) => {
@@ -102,6 +109,11 @@ const UserOrderDetailsPageComponent = ({
 
     return (
         <Container fluid className="ms-5">
+            <MetaComponent
+                title={setting.seoHelmentTitleUserOrdersDetail}
+                description={setting.seoHelmentDescriptionUserOrderDetail}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentTypeUserOrdersDetail} />
       <Row className="mt-4 ms-5">
         <h1>Order Details</h1>
         <Col md={7}>

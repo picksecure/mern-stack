@@ -44,7 +44,11 @@ const LoginPageComponent = ({ loginUserApiRequest, fetchSetting, reduxDispatch, 
 
                 })
                 .catch((er) =>
-                    <></>
+                    setLoginUserResponseState({
+                        error: er.response.data.message
+                            ? er.response.data.message
+                            : er.response.data,
+                    })
                 );
         }
 
@@ -96,7 +100,7 @@ const LoginPageComponent = ({ loginUserApiRequest, fetchSetting, reduxDispatch, 
                                 <Link to={paths.REGISTER}>Register</Link>
                             </Col>
                         </Row>
-                        <div className="text-center mt-3">
+                        <div className="text-center mb-3 mt-3">
                             <Button variant="outline-primary" type="submit">
                                 {loginUserResponseState &&
                                     loginUserResponseState.loading === true ? (
@@ -116,8 +120,7 @@ const LoginPageComponent = ({ loginUserApiRequest, fetchSetting, reduxDispatch, 
                         <Alert
                             show={
                                 loginUserResponseState &&
-                                loginUserResponseState.error === "wrong credentials"
-                            }
+                                loginUserResponseState.error === "wrong credentials"}
                             variant="danger"
                         >
                             Wrong credentials

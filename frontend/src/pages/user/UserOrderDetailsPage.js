@@ -89,8 +89,12 @@ const UserOrderDetailsPage = () => {
         const { data } = await axios.get("/api/users/profile/" + userInfo._id);
         return data;
     }
+    const fetchSetting = async () => {
+        const { data } = await axios.get(`/api/settings/63c9003882210e53d2640862`);
+        return data;
+    }
 
-    return <UserOrderDetailsPageComponent userInfo={userInfo} getUser={getUser} getOrder={getOrder} loadPayPalScript={loadPayPalScript} />;
+    return <UserOrderDetailsPageComponent fetchSetting={fetchSetting} userInfo={userInfo} getUser={getUser} getOrder={getOrder} loadPayPalScript={loadPayPalScript} />;
 };
 
 export default UserOrderDetailsPage;

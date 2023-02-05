@@ -79,6 +79,12 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
         const seoHelmentTitleUserOrders = form.seoHelmentTitleUserOrders.value;
         const seoHelmentDescriptionUserOrders = form.seoHelmentDescriptionUserOrders.value;
         const seoHelmentTypeUserOrders = form.seoHelmentTypeUserOrders.value;
+        const seoHelmentTitleUserOrdersDetail = form.seoHelmentTitleUserOrdersDetail.value;
+        const seoHelmentDescriptionUserOrdersDetail = form.seoHelmentDescriptionUserOrdersDetail.value;
+        const seoHelmentTypeUserOrdersDetail = form.seoHelmentTypeUserOrdersDetail.value;
+        const seoHelmentTitleUserCartDetail = form.seoHelmentTitleUserCartDetail.value;
+        const seoHelmentDescriptionUserCartDetail = form.seoHelmentDescriptionUserCartDetail.value;
+        const seoHelmentTypeUserCartDetail = form.seoHelmentTypeUserCartDetail.value;
 
         if (event.currentTarget.checkValidity() === true) {
             updateSettingsApiRequest(
@@ -140,7 +146,13 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                 seoHelmentTypeUserProfile,
                 seoHelmentTitleUserOrders,
                 seoHelmentDescriptionUserOrders,
-                seoHelmentTypeUserOrders
+                seoHelmentTypeUserOrders,
+                seoHelmentTitleUserOrdersDetail,
+                seoHelmentDescriptionUserOrdersDetail,
+                seoHelmentTypeUserOrdersDetail,
+                seoHelmentTitleUserCartDetail,
+                seoHelmentDescriptionUserCartDetail,
+                seoHelmentTypeUserCartDetail,
                 
             )
                 .then(data => {
@@ -426,6 +438,60 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                                 required
                                 type="text"
                                 defaultValue={setting.seoHelmentTypeUserOrders}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleUserOrdersDetail">
+                            <Form.Label>User-Orders-Detail-page Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleUserOrdersDetail"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleUserOrdersDetail}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionUserOrdersDetail">
+                            <Form.Label>User-Orders-Detail-page Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionUserOrdersDetail"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionUserOrdersDetail}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeUserOrdersDetail">
+                            <Form.Label>User-Orders-Detail-Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeUserOrdersDetail"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeUserOrdersDetail}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTitleUserCartDetail">
+                            <Form.Label>User-Cart-Detail-Page Title:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTitleUserCartDetail"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTitleUserCartDetail}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentDescriptionUserCartDetail">
+                            <Form.Label>User-Cart-Detail-page Description:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentDescriptionUserCartDetail"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentDescriptionUserCartDetail}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicSeoHelmentTypeUserCartDetail">
+                            <Form.Label>User-Cart-Detail-Page type:</Form.Label>
+                            <Form.Control
+                                name="seoHelmentTypeUserCartDetail"
+                                required
+                                type="text"
+                                defaultValue={setting.seoHelmentTypeUserCartDetail}
                             />
                         </Form.Group>
                     </Col>

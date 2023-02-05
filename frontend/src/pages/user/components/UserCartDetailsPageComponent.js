@@ -12,6 +12,7 @@ import CartItemComponent from "../../../components/CartItemComponent";
 import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import MetaComponent from "../../../components/MetaComponent";
 
 const UserCartDetailsPageComponent = ({ cartItems, fetchProducts, fetchSetting, itemsCount, cartSubtotal, userInfo, addToCart, removeFromCart, removeFromCartAll, reduxDispatch, getUser, createOrder }) => {
 
@@ -24,7 +25,7 @@ const UserCartDetailsPageComponent = ({ cartItems, fetchProducts, fetchSetting, 
     const [paymentMethod, setPaymentMethod] = useState("pp");
 
     const navigate = useNavigate();
-
+    
     const changeCount = (productID, count) => {
         reduxDispatch(addToCart(productID, count));
     }
@@ -118,6 +119,11 @@ const UserCartDetailsPageComponent = ({ cartItems, fetchProducts, fetchSetting, 
 
     return (
         <Container fluid className="ms-5">
+            <MetaComponent
+                title={setting.seoHelmentTitleUserCartDetail}
+                description={setting.seoHelmentDescriptionUserCartDetail}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentTypeUserCartDetail} />
       <Row className="mt-4 ms-5">
         <h1>Cart Details</h1>
         <Col md={7}>

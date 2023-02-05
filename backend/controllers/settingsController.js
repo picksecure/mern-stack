@@ -70,6 +70,12 @@ const adminUpdateSettings = async (req, res, next) => {
             seoHelmentTitleUserOrders,
             seoHelmentDescriptionUserOrders,
             seoHelmentTypeUserOrders,
+            seoHelmentTitleUserOrdersDetail,
+            seoHelmentDescriptionUserOrdersDetail,
+            seoHelmentTypeUserOrdersDetail,
+            seoHelmentTitleUserCartDetail,
+            seoHelmentDescriptionUserCartDetail,
+            seoHelmentTypeUserCartDetail,
      
         } =
             req.body;
@@ -141,6 +147,14 @@ const adminUpdateSettings = async (req, res, next) => {
         settings.seoHelmentTitleUserOrders = seoHelmentTitleUserOrders || settings.seoHelmentTitleUserOrders;
         settings.seoHelmentDescriptionUserOrders = seoHelmentDescriptionUserOrders || settings.seoHelmentDescriptionUserOrders;
         settings.seoHelmentTypeUserOrders = seoHelmentTypeUserOrders || settings.seoHelmentTypeUserOrders;
+
+        settings.seoHelmentTitleUserOrdersDetail = seoHelmentTitleUserOrdersDetail || settings.seoHelmentTitleUserOrdersDetail;
+        settings.seoHelmentDescriptionUserOrdersDetail = seoHelmentDescriptionUserOrdersDetail || settings.seoHelmentDescriptionUserOrdersDetail;
+        settings.seoHelmentTypeUserOrdersDetail = seoHelmentTypeUserOrdersDetail || settings.seoHelmentTypeUserOrdersDetail;
+
+        settings.seoHelmentTitleUserCartDetail = seoHelmentTitleUserCartDetail || settings.seoHelmentTitleUserCartDetail;
+        settings.seoHelmentDescriptionUserCartDetail = seoHelmentDescriptionUserCartDetail || settings.seoHelmentDescriptionUserCartDetail;
+        settings.seoHelmentTypeUserCartDetail = seoHelmentTypeUserCartDetail || settings.seoHelmentTypeUserCartDetail;
 
         await settings.save();
         res.json({

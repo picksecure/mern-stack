@@ -160,7 +160,7 @@ const RegisterPageComponent = ({
                                 <Link to={paths.LOGIN}> Login </Link>
                             </Col>
                         </Row>
-                        <div className="text-center mt-3">
+                        <div className="text-center mb-3 mt-3">
                             <Button type="submit" variant="outline-primary">
                             {registerUserResponseState &&
                                 registerUserResponseState.loading === true ? (
