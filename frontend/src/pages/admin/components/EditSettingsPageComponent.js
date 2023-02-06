@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import AdminLinksComponent from "../../../components/admin/AdminLinksComponent";
 
 const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => {
     const [validated, setValidated] = useState(false);
@@ -170,22 +171,17 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
   
 
     return (
-        <Container className="mb-5 pb-5">
-            <Row className="mt-5 mb-3">
-                <Col>
-                    <Link to="/admin/products" className="btn btn-outline-primary my-3">
-                        Go Back
-                    </Link>
-                </Col>
-                <Col className="text-center">
-                    <h1>Edit Settings</h1>
-                </Col>
-                <Col></Col>
-            </Row>
+        <Container fluid className="mb-5 pb-5 mt-5">
+            
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row>
-                    <Col>
-                       
+                    <div className="text-center mb-4">
+                        <h1>Edit Settings</h1>
+                    </div>
+                    <Col className="ms-5 me-5" md={2}>
+                        <AdminLinksComponent />
+                    </Col>
+                    <Col md={4}>
                         <h5>Seo Settings</h5>
                         <Form.Group className="mb-3" controlId="formBasicSeoHelmentName">
                             <Form.Label>Business Name:</Form.Label>
@@ -495,7 +491,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                             />
                         </Form.Group>
                     </Col>
-                    <Col>
+                    <Col md={4}>
                         <Form.Group className="mb-3" controlId="formBasicTax">
                             <Form.Label>Tax:</Form.Label>
                             <Form.Control
@@ -877,7 +873,6 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                             </tbody>
                         </Table>
                     </Col>
-
                         </Row>
                         <div className="text-center">
                             <Button variant="outline-primary" type="submit">
