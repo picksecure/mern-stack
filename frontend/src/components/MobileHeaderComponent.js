@@ -133,7 +133,7 @@ function MobileHeaderComponent() {
                             </li>
                            
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {userInfo.name}
                                 </a>
                                 <div className="dropdown-menu ps-3" aria-labelledby="#navbarDropdown">
@@ -144,7 +144,7 @@ function MobileHeaderComponent() {
                         </>
                     ) : userInfo.name && !userInfo.isAdmin ? (
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {userInfo.name}
                                 </a>
                                 <div className="dropdown-menu ps-3" aria-labelledby="#navbarDropdown">

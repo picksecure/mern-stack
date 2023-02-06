@@ -70,8 +70,11 @@ body {
         margin-top: 0rem;
     }
 }
-    @media (max-width: 992px) {
-        .navbar-collapse {
+.dropdown {
+    z-index: 5;
+}
+@media (max-width: 992px) {
+    .navbar-collapse {
             position: fixed;
             top: 50px;
             left: 0;
