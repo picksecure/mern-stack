@@ -48,7 +48,7 @@ const AboutUsPageComponent = ({ fetchSetting }) => {
                         We are committed to providing amazing customer experiences.
                     </p>
                     <br />
-                    <Link className="noTextDecoration fw-bold" to={paths.PRODUCTLIST}>Meet Our Staff</Link>
+                    <Link className="noTextDecoration fw-bold" to={paths.MEETTHESTAFF}>Meet Our Staff</Link>
                 </Col>
                 <Col className="text-center" md={3}>
                     <BsTools className="aboutIcons" />
