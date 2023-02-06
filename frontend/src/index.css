@@ -74,6 +74,12 @@ body {
     z-index: 5;
 }
 @media (max-width: 992px) {
+    .MarginStart {
+        margin-left: 7rem; 
+        margin-right: 6rem;
+    }
+}
+@media (max-width: 992px) {
     .navbar-collapse {
             position: fixed;
             top: 50px;

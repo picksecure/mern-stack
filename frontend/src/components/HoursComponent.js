@@ -64,7 +64,7 @@ const HoursComponent = ({ setting }) => {
                         </tbody>
                     </Table>
                 </Col>
-                <Col md={4} className="ms-5">
+                <Col md={4} className="MarginStart">
                     <h4>Service Hours</h4>
                     <Table className="table1" size="sm">
 
