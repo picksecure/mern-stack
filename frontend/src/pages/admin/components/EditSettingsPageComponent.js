@@ -490,7 +490,7 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
                             />
                         </Form.Group>
                     </Col>
-                    <Col md={4}>
+                    <Col className="mt-5 pt-5" md={4}>
                         <Form.Group className="mb-3" controlId="formBasicTax">
                             <Form.Label>Tax:</Form.Label>
                             <Form.Control
