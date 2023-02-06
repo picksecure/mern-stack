@@ -31,6 +31,7 @@ import RoutesWithUserChatComponent from '../components/user/RoutesWithUserChatCo
 import ScrollToTop from '../utils/ScrollToTop';
 import NotFoundPage from '../pages/notFoundPage';
 import ProtectedRoutesComponent from '../components/ProtectedRoutesComponent';
+import AboutUsPage from '../pages/AboutUsPage';
 
 const RouterComponent = () => {
     return (
@@ -41,6 +42,7 @@ const RouterComponent = () => {
                     <Route element={<RoutesWithUserChatComponent />}>
                         <Route path={paths.ROOT} caseSensitive={false} element={<HomePage />} />
                         <Route path={paths.CART} caseSensitive={false} element={<CartPage />} />
+                        <Route path={paths.ABOUT} caseSensitive={false} element={<AboutUsPage />} />
                         <Route path={paths.CUSTOMBUILDS} caseSensitive={false} element={<GalleryPage />} />
                         <Route path={paths.LOGIN} caseSensitive={false} element={<LoginPage />} />
                         <Route path={paths.REGISTER} caseSensitive={false} element={<RegisterPage />} />

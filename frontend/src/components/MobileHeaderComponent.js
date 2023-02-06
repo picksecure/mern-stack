@@ -68,35 +68,55 @@ function MobileHeaderComponent() {
             return () => socket.disconnect();
         }
     }, [userInfo.isAdmin, dispatch])
-    
+
+    const myFunction = (e) => {
+        document.getElementById("navbarToggleExternalContent").classList.toggle("show");
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
     return (
         <>
             <nav className="row navbar navbar-light bg-light pt-3 pb-3">
-                <div className="ms-5 col container-fluid">
-                    <button className="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <FaBars />
+                <div className="ms-5 col container-fluid ">
+                    <button className="navbar-toggler border-light dropbtn" type="button" onClick={myFunction}>
+                        <FaBars/>
                     </button>
                 </div>
                 <div className="col container-fluid">
-                    <button className="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#mobileContent" aria-controls="mobileContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler border-light dropbtn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileContent" aria-controls="mobileContent" aria-expanded="false" aria-label="Toggle navigation">
                         <FaSearch/>
                     </button>
                 </div>
                 <div className="col container-fluid">
-                    <button className="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#mobileContent1" aria-controls="mobileContent1" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler border-light dropbtn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileContent1" aria-controls="mobileContent1" aria-expanded="false" aria-label="Toggle navigation">
                         <MdLocationPin />
                     </button>
                 </div>
                 <div className="col container-fluid">
-                    <button className="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#mobileContent2" aria-controls="mobileContent2" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler border-light dropbtn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileContent2" aria-controls="mobileContent2" aria-expanded="false" aria-label="Toggle navigation">
                         <BsFillTelephoneFill />
                     </button>
                 </div>
             </nav>
-            <div className="collapse navbar-collapse bg-light" id="navbarToggleExternalContent">
+            <div className="collapse navbar-collapse bg-light dropdown-content" id="navbarToggleExternalContent">
                 <ul className="p-4 navbar-nav">
                     <li className="nav-item">
                         <Link className="nav-link" to={paths.ROOT}>Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to={paths.ABOUT}>About Us</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to={paths.PRODUCTLIST}>
@@ -111,21 +131,29 @@ function MobileHeaderComponent() {
                                     {messageReceived && <span className="position-absolute top-3 start-10 translate-middle p-2 bg-danger border border-light rounded-circle"></span>}
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                            <ul title={`${userInfo.name}`} className="nav-link" id="basic-nav-dropdown">
-                                <Link to={paths.USERPROFILE}><li eventKey={paths.USERPROFILE}>My Profile</li></Link>
-                                <Link onClick={() => dispatch(logout())}>Logout</Link>
-                                </ul>
+                           
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {userInfo.name}
+                                </a>
+                                <div className="dropdown-menu ps-3" aria-labelledby="#navbarDropdown">
+                                    <Link className="nav-link" to={paths.USERPROFILE}><li>My Profile</li></Link>
+                                    <Link className="nav-link" onClick={() => dispatch(logout())}>Logout</Link>
+                                </div>
                             </li>
                         </>
                     ) : userInfo.name && !userInfo.isAdmin ? (
-                            <li className="nav-item">
-                            <ul className="nav-link" title={`${userInfo.name} ${userInfo.lastName}`} id="basic-nav-dropdown">
-                                <Link to={paths.USERORDER}><li eventKey={paths.USERORDER}>My Orders</li></Link>
-                            <Link to={paths.USERPROFILE}><li eventKey={paths.USERPROFILE}>My Profile</li></Link>
-                            <Link onClick={() => dispatch(logout())}>Logout</Link>
-                                </ul>
-                                </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {userInfo.name}
+                                </a>
+                                <div className="dropdown-menu ps-3" aria-labelledby="#navbarDropdown">
+                                    <Link className="nav-link" to={paths.USERORDER}><li eventKey={paths.USERORDER}>My Orders</li></Link>
+                                    <Link className="nav-link" to={paths.USERPROFILE}><li eventKey={paths.USERPROFILE}>My Profile</li></Link>
+                                    <Link className="nav-link" onClick={() => dispatch(logout())}>Logout</Link>
+                                </div>
+                            </li>
+                           
                     ) : (
                                 <>
                                     <li className="nav-item">
@@ -150,7 +178,7 @@ function MobileHeaderComponent() {
                         </li>
                 </ul>
             </div>
-            <div className="collapse navbar-collapse1 bg-light" id="mobileContent">
+            <div className="collapse navbar-collapse1 bg-light dropdown-content" id="mobileContent">
                 <ul className="p-4 navbar-nav">
                     <InputGroup>
                         <DropdownButton id="dropdown-basic-button" title={searchCategoryToggle}>
@@ -164,7 +192,7 @@ function MobileHeaderComponent() {
                     </InputGroup>
                 </ul>
             </div>
-            <div className="collapse navbar-collapse2 bg-light" id="mobileContent1">
+            <div className="collapse navbar-collapse2 bg-light dropdown-content" id="mobileContent1">
                 <ul className="p-2 navbar-nav">
                     <li className="nav-item nav-link font-bold me-auto">
                         Directions
@@ -174,7 +202,7 @@ function MobileHeaderComponent() {
                     </li>
                 </ul>
             </div>
-            <div className="collapse navbar-collapse2 bg-light" id="mobileContent2">
+            <div className="collapse navbar-collapse2 bg-light dropdown-content" id="mobileContent2">
                 <ul className="p-2 navbar-nav">
                     <li className="nav-item nav-link font-bold me-auto">
                         Contact Us

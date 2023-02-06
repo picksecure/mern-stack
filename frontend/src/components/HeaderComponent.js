@@ -95,7 +95,10 @@ function HeaderComponent() {
                         <Nav className="ms-auto">
                             <LinkContainer to={paths.PRODUCTLIST}>
                                 <Nav.Link>Shop</Nav.Link>
-                            </LinkContainer>
+                        </LinkContainer>
+                        <LinkContainer to={paths.ABOUT}>
+                            <Nav.Link>About Us</Nav.Link>
+                        </LinkContainer>
                             {userInfo.isAdmin ? (
                                 <>
                                     <LinkContainer to={paths.ADMINORDERS}>

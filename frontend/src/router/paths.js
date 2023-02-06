@@ -2,6 +2,7 @@ const paths = {
     ROOT: '/',
     CART: '/cart',
     LOGIN: '/login',
+    ABOUT: '/about-us',
     REGISTER: '/register',
     CUSTOMBUILDS: '/custom-builds',
     PRODUCTDETAIL: '/product-details',

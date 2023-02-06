@@ -18,7 +18,7 @@ const FooterComponent = () => {
                       <Link to={paths.ROOT}><p className="small mb-0 ms-3">Home</p></Link>
                       <Link to={paths.PRODUCTLIST}><p className="small mb-0 ms-3">Shop</p></Link>
                       <Link to={paths.CUSTOMBUILDS}><p className="small mb-0 ms-3">Gallery</p></Link>
-                      <p className="small mb-0 ms-3">About Us</p>
+                      <Link to={paths.ABOUT}><p className="small mb-0 ms-3">About Us</p></Link>
                   </Col>
                   <Col className="pt-5 ps-5" md={2 }>
                       <h4>Get In Touch</h4>

@@ -1,11 +1,16 @@
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-
+.noTextDecoration {
+    text-decoration: none !important;
+}
 html {
     position: relative;
     min-height: 100%;
 }
+
+.show {display: block;}
+
 .color-main {
     background-color: #f0f1f2;
     padding-bottom: 12rem;
@@ -18,6 +23,29 @@ html {
 .mobileleft {
     margin-left: 5rem !important;
     position: fixed !important;
+}
+.aboutIcons {
+    width: 8rem;
+    height: 8rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 50%;
+}
+.parent {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./gallery/jeep_outdoor.jpg");
+    background-size: 100% 100%;
+    z-index: -1;
+    height: 280px;
+}
+.text {
+    position: absolute;
+    color: #fff;
+    z-index: 5;
+}
+.centered {
+    top: 40%;
+    padding-left: 90px;
 }
 body {
     margin: 0;
@@ -51,7 +79,7 @@ body {
             padding-left: 0px;
             padding-right: 15px;
             padding-bottom: 15px;
-            padding-top: 0px;
+            margin-top: 16px;
             font-size: 20px;
             width: 45%;
             height: 100%;
@@ -81,7 +109,7 @@ body {
             padding-left: 15px;
             padding-right: 15px;
             padding-bottom: 15px;
-            padding-top: 15px;
+            margin-top: 16px;
             width: 100%;
             height: 100px;
         }
@@ -96,7 +124,7 @@ body {
             padding-left: 35px;
             padding-right: 15px;
             padding-bottom: 15px;
-            padding-top: 10px;
+            margin-top: 16px;
             width: 100%;
             height: 155px;
         }
