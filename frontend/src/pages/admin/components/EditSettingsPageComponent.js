@@ -175,13 +175,12 @@ const EditPageSettingsmponent = ({ updateSettingsApiRequest, fetchSetting }) => 
             
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row>
-                    <div className="text-center mb-4">
-                        <h1>Edit Settings</h1>
-                    </div>
+                    
                     <Col className="ms-5 me-5" md={2}>
                         <AdminLinksComponent />
                     </Col>
                     <Col md={4}>
+                            <h1 className="mb-5">Edit Settings</h1>
                         <h5>Seo Settings</h5>
                         <Form.Group className="mb-3" controlId="formBasicSeoHelmentName">
                             <Form.Label>Business Name:</Form.Label>
