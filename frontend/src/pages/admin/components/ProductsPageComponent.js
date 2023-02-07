@@ -57,14 +57,6 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
 
         })();
 
-        /*console.log(document.readyState);
-          document.addEventListener('readystatechange', function() {
-              if (document.readyState === 'complete') {
-            console.log(document.readyState);
-                  TableFilter.init();
-              }
-          }); */
-
         TableFilter.init();
     })();
   useEffect(() => {
@@ -86,16 +78,16 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
       </Col>
       <Col md={10}>
               <Row className="mb-3">
-                  <Col xs={5}>
+                  <Col xs={5} md={6}>
                       <h1>
                           Product List
                       </h1>
                   </Col>
                   <Col md={3}>
-                      <input type="text" className="input-group table-filter w-100" data-table="order-table" placeholder="Search Products.." />
+                      <input type="text" className="mt-2 input-group table-filter w-100" data-table="order-table" placeholder="Search Products.." />
 
                   </Col>
-                  <Col>
+                  <Col md={3}>
                       <LinkContainer className="ms-5" to={paths.ADMINCREATEPRODUCT} >
                           <Button variant="outline-primary" size="lg">
                               Create new
