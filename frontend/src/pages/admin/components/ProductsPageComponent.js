@@ -21,7 +21,43 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
         }
     }
   };
-  
+    (function (document) {
+        'use strict';
+
+        var TableFilter = (function (myArray) {
+            var search_input;
+
+            function _onInputSearch(e) {
+                search_input = e.target;
+                var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
+                myArray.forEach.call(tables, function (table) {
+                    myArray.forEach.call(table.tBodies, function (tbody) {
+                        myArray.forEach.call(tbody.rows, function (row) {
+                            var text_content = row.textContent.toLowerCase();
+                            var search_val = search_input.value.toLowerCase();
+                            row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
+                        });
+                    });
+                });
+            }
+
+            return {
+                init: function () {
+                    var inputs = document.getElementsByClassName('search-input');
+                    myArray.forEach.call(inputs, function (input) {
+                        input.oninput = _onInputSearch;
+                    });
+                }
+            };
+        })(Array.prototype);
+
+        document.addEventListener('readystatechange', function () {
+            if (document.readyState === 'complete') {
+                TableFilter.init();
+            }
+        });
+
+    })(document);
   useEffect(() => {
     const abctrl = new AbortController();
     fetchProducts(abctrl)
@@ -46,7 +82,10 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
                           Product List
                       </h1>
                   </Col>
-                  <Col></Col>
+                  <Col>
+                      <input type="search" placeholder="Search..." className="form-control search-input" data-table="customers-list" />
+
+                  </Col>
                   <Col>
                       <LinkContainer className="ms-5" to={paths.ADMINCREATEPRODUCT} >
                           <Button variant="outline-primary" size="lg">
@@ -56,7 +95,7 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
                       
                   </Col>
               </Row>
-        <Table striped bordered hover responsive>
+              <Table striped bordered hover responsive className="customers-list">
                   <thead>
                       <tr className="text-center">
               <th>#</th>
