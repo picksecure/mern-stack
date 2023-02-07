@@ -99,6 +99,9 @@ function HeaderComponent() {
                         <LinkContainer to={paths.ABOUT}>
                             <Nav.Link>About Us</Nav.Link>
                         </LinkContainer>
+                        <LinkContainer to={paths.CONTACT}>
+                            <Nav.Link>Contact</Nav.Link>
+                        </LinkContainer>
                             {userInfo.isAdmin ? (
                                 <>
                                     <LinkContainer to={paths.ADMINORDERS}>

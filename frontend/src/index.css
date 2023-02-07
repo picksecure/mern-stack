@@ -29,6 +29,14 @@ html {
     margin-left: 5rem !important;
     position: fixed !important;
 }
+
+.borderingLight {
+    border: 1px solid #fff !important;
+    z-index: 99;
+    background: rgba(240, 240, 240, .8);
+    width: 500px;
+    color: #000;
+}
 .aboutIcons {
     width: 8rem;
     height: 8rem;
@@ -43,8 +51,14 @@ html {
     z-index: -1;
     height: 280px;
 }
+.parentBack {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./gallery/two_jeeps.jpg");
+    background-size: cover;
+    height: 60rem;
+}
 .text {
-    position: absolute;
+    margin-top: 4rem;
     color: #fff;
     z-index: 5;
 }

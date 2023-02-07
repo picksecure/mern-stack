@@ -7,7 +7,6 @@ import {
     Button,
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import paths from "../router/paths";
 
 const ContactComponent = ({ newMessage }) => {
@@ -43,10 +42,9 @@ const ContactComponent = ({ newMessage }) => {
     }
 
 return (
-    <Container className="mb-5">
-        <Row className="mt-5">
-            <Col md={4}></Col>
-            <Col md={4}>
+    <Container className="fw-bold mb-5 pb-5 mt-5 ps-4 pe-4 borderingLight justify-content-md-center">
+        <Row className="mt-5 bordering">
+            <Col md={12}>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Name:</Form.Label>
@@ -95,7 +93,7 @@ return (
                         />
                     </Form.Group>
                     <div className="text-center">
-                        <Button variant="outline-primary" type="submit">
+                        <Button variant="outline-primary mt-3" type="submit">
                             Contact Us
                         </Button>
                     </div>

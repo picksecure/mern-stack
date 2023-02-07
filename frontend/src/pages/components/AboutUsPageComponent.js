@@ -56,7 +56,7 @@ const AboutUsPageComponent = ({ fetchSetting }) => {
                     <p>
                         Our service center is here to help ensure you enjoy many great years of driving.
                     </p>
-                    <Link className="noTextDecoration fw-bold" to={paths.PRODUCTLIST}>Schedule Service</Link>
+                    <Link className="noTextDecoration fw-bold" to={paths.CONTACT}>Schedule Service</Link>
                 </Col>
             </Row>
             <Row className="mt-5 justify-content-md-center">

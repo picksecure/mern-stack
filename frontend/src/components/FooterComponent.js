@@ -22,7 +22,7 @@ const FooterComponent = () => {
                   </Col>
                   <Col className="pt-5 ps-5" md={2 }>
                       <h4>Get In Touch</h4>
-                      <p className="small mb-0 ms-3">Contact Us</p>
+                      <Link to={paths.CONTACT}><p className="small mb-0 ms-3">Contact Us</p></Link>
                       <p className="small mb-0 ms-3">130 N MAIN ST Salem, UT 84653</p>
                   </Col>
                   <Col className="pt-5" md={5 }>

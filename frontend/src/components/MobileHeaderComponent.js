@@ -119,6 +119,9 @@ function MobileHeaderComponent() {
                         <Link className="nav-link" to={paths.ABOUT}>About Us</Link>
                     </li>
                     <li className="nav-item">
+                        <Link className="nav-link" to={paths.CONTACT}>Contact</Link>
+                    </li>
+                    <li className="nav-item">
                         <Link className="nav-link" to={paths.PRODUCTLIST}>
                             Shop
                         </Link>

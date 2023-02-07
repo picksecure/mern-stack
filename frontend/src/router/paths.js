@@ -3,6 +3,7 @@ const paths = {
     CART: '/cart',
     LOGIN: '/login',
     ABOUT: '/about-us',
+    CONTACT: '/contact',
     MEETTHESTAFF: '/staff',
     REGISTER: '/register',
     CUSTOMBUILDS: '/custom-builds',
