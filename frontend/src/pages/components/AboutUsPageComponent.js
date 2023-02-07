@@ -5,6 +5,7 @@ import { BsTools } from 'react-icons/bs';
 import { Link } from "react-router-dom";
 import BigMapComponent from "../../components/BigMapComponent";
 import HoursComponent from "../../components/HoursComponent";
+import MetaComponent from "../../components/MetaComponent";
 import paths from "../../router/paths";
 
 const AboutUsPageComponent = ({ fetchSetting }) => {
@@ -18,6 +19,11 @@ const AboutUsPageComponent = ({ fetchSetting }) => {
 
     return (
         <Container fluid className="w-100">
+            <MetaComponent
+                title={setting.seoHelmentTitleAbout}
+                description={setting.seoHelmentDescriptionAbout}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentTypeAbout} />
             <Row className="parent justify-content-md-center">
                 <h1 className="text centered">About Dr. Jeep</h1>
             </Row>

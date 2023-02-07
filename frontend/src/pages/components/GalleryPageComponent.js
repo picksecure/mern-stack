@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import ContactComponent from "../../components/ContactComponent";
 import CustomBuildsGallery from "../../components/CustomBuildsGallery";
 import MetaComponent from "../../components/MetaComponent";
@@ -28,9 +28,14 @@ const GalleryPageComponent = ({ fetchSetting, newMessage}) => {
                     <CustomBuildsGallery />
                 </Row>
                 <Row xs={1} md={12} className="text-center">
-                    <h3 className="display2">Contact Us About a Custom Build</h3>
+                    <h3 className="display2 mb-5">Contact Us About a Custom Build</h3>
                 </Row>
-                <ContactComponent newMessage={newMessage} />
+                <Row className="justify-content-md-center mt-5 pt-5">
+                    <Col md={4}>
+                        <ContactComponent newMessage={newMessage} />
+                    </Col>
+                </Row>
+
             </Container>
         </>
     );

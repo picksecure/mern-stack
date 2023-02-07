@@ -76,7 +76,15 @@ const adminUpdateSettings = async (req, res, next) => {
             seoHelmentTitleUserCartDetail,
             seoHelmentDescriptionUserCartDetail,
             seoHelmentTypeUserCartDetail,
-     
+            seoHelmentTitleAbout,
+            seoHelmentDescriptionAbout,
+            seoHelmentTypeAbout,
+            seoHelmentTitleStaff,
+            seoHelmentDescriptionStaff,
+            seoHelmentTypeStaff,
+            seoHelmentTitleContact,
+            seoHelmentDescriptionContact,
+            seoHelmentTypeContact,
         } =
             req.body;
         settings.tax = tax || settings.tax;
@@ -155,6 +163,18 @@ const adminUpdateSettings = async (req, res, next) => {
         settings.seoHelmentTitleUserCartDetail = seoHelmentTitleUserCartDetail || settings.seoHelmentTitleUserCartDetail;
         settings.seoHelmentDescriptionUserCartDetail = seoHelmentDescriptionUserCartDetail || settings.seoHelmentDescriptionUserCartDetail;
         settings.seoHelmentTypeUserCartDetail = seoHelmentTypeUserCartDetail || settings.seoHelmentTypeUserCartDetail;
+
+        settings.seoHelmentTitleAbout = seoHelmentTitleAbout || settings.seoHelmentTitleAbout;
+        settings.seoHelmentDescriptionAbout = seoHelmentDescriptionAbout || settings.seoHelmentDescriptionAbout;
+        settings.seoHelmentTypeAbout = seoHelmentTypeAbout || settings.seoHelmentTypeAbout;
+
+        settings.seoHelmentTitleStaff = seoHelmentTitleStaff || settings.seoHelmentTitleStaff;
+        settings.seoHelmentDescriptionStaff = seoHelmentDescriptionStaff || settings.seoHelmentDescriptionStaff;
+        settings.seoHelmentTypeStaff = seoHelmentTypeStaff || settings.seoHelmentTypeStaff;
+
+        settings.seoHelmentTitleContact = seoHelmentTitleContact || settings.seoHelmentTitleContact;
+        settings.seoHelmentDescriptionContact = seoHelmentDescriptionContact || settings.seoHelmentDescriptionContact;
+        settings.seoHelmentTypeContact = seoHelmentTypeContact || settings.seoHelmentTypeContact;
 
         await settings.save();
         res.json({

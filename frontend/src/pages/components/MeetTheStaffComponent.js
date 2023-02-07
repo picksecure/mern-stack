@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Russ from "../../gallery/russ.jpg";
 import Blank from "../../gallery/blank_Person.jpg";
+import MetaComponent from "../../components/MetaComponent";
 
 const MeetTheStaffPageComponent = ({ fetchSetting }) => {
     const [setting, setSetting] = useState([]);
@@ -14,6 +15,11 @@ const MeetTheStaffPageComponent = ({ fetchSetting }) => {
 
     return (
         <Container fluid className="w-100 h-100">
+            <MetaComponent
+                title={setting.seoHelmentTitleStaff}
+                description={setting.seoHelmentDescriptionStaff}
+                name={setting.seoHelmentName}
+                type={setting.seoHelmentTypeStaff} />
             <Row className="mt-4 mb-2 ms-5">
                 <h1>Meet The Staff</h1>
             </Row>

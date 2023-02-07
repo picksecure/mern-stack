@@ -83,6 +83,17 @@ const settingsSchema = mongoose.Schema({
     seoHelmentDescriptionUserCartDetail: { type: String, required: true },
     seoHelmentTypeUserCartDetail: { type: String, required: true },
 
+    seoHelmentTitleAbout: { type: String, required: true },
+    seoHelmentDescriptionAbout: { type: String, required: true },
+    seoHelmentTypeAbout: { type: String, required: true },
+
+    seoHelmentTitleStaff: { type: String, required: true },
+    seoHelmentDescriptionStaff: { type: String, required: true },
+    seoHelmentTypeStaff: { type: String, required: true },
+
+    seoHelmentTitleContact: { type: String, required: true },
+    seoHelmentDescriptionContact: { type: String, required: true },
+    seoHelmentTypeContact: { type: String, required: true },
 }, {
     timestamps: true,
 });
