@@ -42,9 +42,9 @@ const ContactComponent = ({ newMessage }) => {
     }
 
 return (
-    <Container className="fw-bold mb-5 pb-5 mt-5 ps-4 pe-4 borderingLight justify-content-md-center">
-        <Row className="mt-5 bordering">
-            <Col md={12}>
+    <Container className="fw-bold mb-5 mt-0 pb-5 ps-4 pe-4 borderingLight">
+        <Row className="mt-3">
+            <Col md={12} sm={2}>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Name:</Form.Label>

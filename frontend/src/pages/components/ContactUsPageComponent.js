@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Row, Container } from "react-bootstrap";
+import { Row, Container, Col } from "react-bootstrap";
 import ContactComponent from "../../components/ContactComponent";
 
 
@@ -15,10 +15,11 @@ const ContactUsPageComponent = ({ fetchSetting, newMessage }) => {
     return (
         <Container fluid className="w-100">
             <Row className="parentBack justify-content-md-center">
-                <div>
                     <h1 className="text text-center">Contact Dr. Jeep</h1>
-                    <ContactComponent newMessage={newMessage} />
-                </div>
+                <Col md={3} sm={4}>
+                        <ContactComponent newMessage={newMessage} />
+                    </Col>
+
             </Row>
           
         </Container>
