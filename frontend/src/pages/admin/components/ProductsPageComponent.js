@@ -21,43 +21,52 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
         }
     }
   };
-    (function (document) {
+    (function () {
         'use strict';
 
-        var TableFilter = (function (myArray) {
-            var search_input;
+        var TableFilter = (function () {
+            var Arr = Array.prototype;
+            var input;
 
-            function _onInputSearch(e) {
-                search_input = e.target;
-                var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
-                myArray.forEach.call(tables, function (table) {
-                    myArray.forEach.call(table.tBodies, function (tbody) {
-                        myArray.forEach.call(tbody.rows, function (row) {
-                            var text_content = row.textContent.toLowerCase();
-                            var search_val = search_input.value.toLowerCase();
-                            row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
-                        });
+            function onInputEvent(e) {
+                input = e.target;
+                var table1 = document.getElementsByClassName(input.getAttribute('data-table'));
+                Arr.forEach.call(table1, function (table) {
+                    Arr.forEach.call(table.tBodies, function (tbody) {
+                        Arr.forEach.call(tbody.rows, filter);
                     });
                 });
             }
 
+            function filter(row) {
+                var text = row.textContent.toLowerCase();
+                //console.log(text);
+                var val = input.value.toLowerCase();
+                //console.log(val);
+                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+            }
+
             return {
                 init: function () {
-                    var inputs = document.getElementsByClassName('search-input');
-                    myArray.forEach.call(inputs, function (input) {
-                        input.oninput = _onInputSearch;
+                    var inputs = document.getElementsByClassName('table-filter');
+                    Arr.forEach.call(inputs, function (input) {
+                        input.oninput = onInputEvent;
                     });
                 }
             };
-        })(Array.prototype);
 
-        document.addEventListener('readystatechange', function () {
-            if (document.readyState === 'complete') {
-                TableFilter.init();
-            }
-        });
+        })();
 
-    })(document);
+        /*console.log(document.readyState);
+          document.addEventListener('readystatechange', function() {
+              if (document.readyState === 'complete') {
+            console.log(document.readyState);
+                  TableFilter.init();
+              }
+          }); */
+
+        TableFilter.init();
+    })();
   useEffect(() => {
     const abctrl = new AbortController();
     fetchProducts(abctrl)
@@ -82,8 +91,8 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
                           Product List
                       </h1>
                   </Col>
-                  <Col>
-                      <input type="search" placeholder="Search..." className="form-control search-input" data-table="customers-list" />
+                  <Col md={3}>
+                      <input type="text" className="input-group table-filter w-100" data-table="order-table" placeholder="Search Products.." />
 
                   </Col>
                   <Col>
@@ -95,7 +104,7 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
                       
                   </Col>
               </Row>
-              <Table striped bordered hover responsive className="customers-list">
+              <Table striped bordered hover responsive className="order-table table">
                   <thead>
                       <tr className="text-center">
               <th>#</th>
