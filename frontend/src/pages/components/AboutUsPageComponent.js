@@ -33,7 +33,7 @@ const AboutUsPageComponent = ({ fetchSetting }) => {
                 <Col md={3}></Col>
             </Row>
             <Row className="mt-5 justify-content-md-center">
-                <Col className="text-center" md={3}>
+                <Col className="text-center mt-5" md={3}>
                     <AiFillCar className="aboutIcons" />
                     <h5 className="mt-5 fw-bold">Parts Shopping Made Easy</h5>
                     <p>
@@ -41,7 +41,7 @@ const AboutUsPageComponent = ({ fetchSetting }) => {
                     </p>
                     <Link className="noTextDecoration fw-bold" to={paths.PRODUCTLIST}>View Our Inventory</Link>
                 </Col>
-                <Col className="text-center" md={3}>
+                <Col className="text-center mt-5" md={3}>
                     <AiFillStar className="aboutIcons text-warning" />
                     <h5 className="mt-5 fw-bold">Exceptional Customer Service</h5>
                     <p>
@@ -50,7 +50,7 @@ const AboutUsPageComponent = ({ fetchSetting }) => {
                     <br />
                     <Link className="noTextDecoration fw-bold" to={paths.MEETTHESTAFF}>Meet Our Staff</Link>
                 </Col>
-                <Col className="text-center" md={3}>
+                <Col className="text-center mt-5" md={3}>
                     <BsTools className="aboutIcons" />
                     <h5 className="mt-5 fw-bold">We Keep You Going</h5>
                     <p>
