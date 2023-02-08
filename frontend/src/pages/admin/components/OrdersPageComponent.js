@@ -89,7 +89,7 @@ const OrdersPageComponent = ({ getOrders }) => {
           <tbody>
             {orders.map((order, idx) => (
               <tr key={idx}>
-                <td>{idx + 1}</td>
+                <td className="text-center">{idx + 1}</td>
                     <td className="text-center">
                   {order.user !== null ? (
                     <>
