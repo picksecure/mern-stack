@@ -6,6 +6,7 @@ import {
   Alert,
   ListGroup,
   Button,
+  Breadcrumb,
 } from "react-bootstrap";
 import CartItemComponent from "../../../components/CartItemComponent";
 
@@ -14,6 +15,7 @@ import { useEffect, useState } from "react";
 
 import { logout } from "../../../redux/actions/userActions";
 import { useDispatch } from "react-redux";
+import paths from "../../../router/paths";
 
 const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled, markAsRefund }) => {
   const { id } = useParams();
@@ -95,7 +97,13 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
   }, [isDelivered, cancelled, refund, id, getOrder, dispatch]);
   return (
     <Container fluid>
-      <Row className="mt-4 ms-5">
+          <Row className="mt-4 ms-5">
+              <Breadcrumb className="mb-3">
+                  <Breadcrumb.Item href={paths.ADMINORDERS}>
+                      Order List
+                  </Breadcrumb.Item>
+                  <Breadcrumb.Item className="ms-1" active>{id}</Breadcrumb.Item>
+              </Breadcrumb>
         <h1>Order Details</h1>
         <Col md={7}>
           <br />

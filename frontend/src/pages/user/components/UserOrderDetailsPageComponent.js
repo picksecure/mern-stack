@@ -5,11 +5,13 @@ import {
   Form,
   ListGroup,
   Button,
+  Breadcrumb,
 } from "react-bootstrap";
 import CartItemComponent from "../../../components/CartItemComponent";
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import MetaComponent from "../../../components/MetaComponent";
+import paths from "../../../router/paths";
 
 const UserOrderDetailsPageComponent = ({
   userInfo,
@@ -129,7 +131,13 @@ const UserOrderDetailsPageComponent = ({
                 description={setting.seoHelmentDescriptionUserOrderDetail}
                 name={setting.seoHelmentName}
                 type={setting.seoHelmentTypeUserOrdersDetail} />
-      <Row className="mt-4 ms-5">
+            <Row className="mt-4 ms-5">
+                <Breadcrumb className="mb-3">
+                    <Breadcrumb.Item href={paths.USERORDER}>
+                        Order List
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item className="ms-1" active>{id}</Breadcrumb.Item>
+                </Breadcrumb>
         <h1>Order Details</h1>
         <Col md={7}>
                     <br />
