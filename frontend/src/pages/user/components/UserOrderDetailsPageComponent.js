@@ -22,6 +22,7 @@ const UserOrderDetailsPageComponent = ({
   const [paymentMethod, setPaymentMethod] = useState("");
     const [isPaid, setIsPaid] = useState(false);
     const [cancelled, setCancelled] = useState(false);
+    const [refund, setRefund] = useState(false);
   const [orderButtonMessage, setOrderButtonMessage] = useState("");
   const [cartItems, setCartItems] = useState([]);
     const [cartSubtotal, setCartSubtotal] = useState(0);
@@ -68,11 +69,18 @@ const UserOrderDetailsPageComponent = ({
           setCartShipping(data.orderTotal.cartShipping);
         data.isDelivered
           ? setIsDelivered(data.deliveredAt)
-              : setIsDelivered(false);
+            : setIsDelivered(false);
+          data.refund
+              ? setRefund(data.refundAt)
+              : setRefund(false);
           data.cancelled
               ? setCancelled(data.cancelledAt)
               : setCancelled(false);
           data.isPaid ? setIsPaid(data.paidAt) : setIsPaid(false);
+          if (data.refund) {
+              setOrderButtonMessage("Your order has been refunded");
+              setButtonDisabled(true);
+          }
           if (data.cancelled) {
               setOrderButtonMessage("Your order has been cancelled");
               setButtonDisabled(true);
@@ -135,7 +143,7 @@ const UserOrderDetailsPageComponent = ({
                                 {cancelled ? (
                                     <>
                                         <b className="me-5">Status:</b>
-                                            <b className="text-success">Order Cancelled</b>
+                                        <b className="text-success">Order cancelled on {cancelled}</b>
                                          <br />
                                     </>
                                 ) : (
@@ -156,20 +164,20 @@ const UserOrderDetailsPageComponent = ({
                   Cash On Delivery (delivery may be delayed)
                 </option>
                             </Form.Select>
-                            {paymentMethod === "cod" ? (
-                                <></>
+                            {refund ? (
+                                <>
+                                    <b>Status:</b><b className="ms-2 text-success">Refund on {refund}</b>
+                             </>
                             ) : (
+                                <>
+                                { paymentMethod === "cod" ? (
+                                    <></>
+                                ) : (
                                     <>
-                                        {cancelled ? (
-                                            <>
-                                                <b>Status:</b><b className="ms-2 text-success">Cancelled on {cancelled}</b>
-                                            </>
-                                        ) : (
-                                                <>
                                         <b>Status:</b>{isPaid ? (<b className="ms-2 text-success">Paid on {isPaid}</b>) : (<b className="ms-5 text-danger">Not paid yet</b>)} <br />
-                                       </>
-                                                    )}
-                                        </>
+                                    </>
+                                )}
+                            </>
                             )}
                         </Col>
                     </Row>

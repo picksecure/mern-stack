@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import { logout } from "../../../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 
-const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled }) => {
+const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled, markAsRefund }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
     const [cartPrice, setCartPrice] = useState(0);
@@ -26,12 +26,16 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled 
   const [isPaid, setIsPaid] = useState(false);
     const [isDelivered, setIsDelivered] = useState(false);
     const [cancelled, setCancelled] = useState(false);
+    const [refund, setRefund] = useState(false);
   const [cartSubtotal, setCartSubtotal] = useState(0);
     const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [buttonDisabled1, setButtonDisabled1] = useState(false);
   const [orderButtonMessage, setOrderButtonMessage] =
         useState("Mark as delivered");
     const [cancelButtonMessage, setCancelButtonMessage] =
-        useState("Cancel The Order");
+        useState("Cancel the order");
+    const [refundButtonMessage, setRefundButtonMessage] =
+        useState("Refund the order");
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -43,6 +47,9 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled 
         order.isDelivered
           ? setIsDelivered(order.deliveredAt)
               : setIsDelivered(false);
+          order.refund
+              ? setRefund(order.refundAt)
+              : setRefund(false);
           order.cancelled
               ? setCancelled(order.cancelledAt)
               : setCancelled(false);
@@ -58,6 +65,10 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled 
               setCancelButtonMessage("Order is cancelled");
               setButtonDisabled(true);
           }
+          if (order.refund) {
+              setRefundButtonMessage("Order has been refunded");
+              setButtonDisabled1(true);
+          }
         setCartItems(order.cartItems);
       })
       .catch((er) =>
@@ -66,7 +77,7 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled 
         //   er.response.data.message ? er.response.data.message : er.response.data
         // )
       );
-  }, [isDelivered, cancelled, id, getOrder, dispatch]);
+  }, [isDelivered, cancelled, refund, id, getOrder, dispatch]);
   return (
     <Container fluid>
       <Row className="mt-4 ms-5">
@@ -92,33 +103,35 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled 
             </Col>
             <Row>
               <Col>
-                <Alert
-                  className="mt-3"
-                  variant={isDelivered ? "success" : "danger"}
-                >
-                  {isDelivered ? (
-                    <>Delivered at {isDelivered}</>
-                  ) : (
-                    <>Not delivered</>
-                  )}
-                </Alert>
-                          </Col>
-                          <Col>
-                              <Alert
-                                  className="mt-3"
-                                  variant={cancelled ? "success" : "danger"}
-                              >
+                              <>
                                   {cancelled ? (
-                                      <>Cancelled at {cancelled}</>
+                                      <>
+                                          <b className="me-5">Status:</b>
+                                          <b className="text-success">Order cancelled on {cancelled}</b>
+                                          <br />
+                                      </>
                                   ) : (
-                                      <>Not cancelled</>
-                                  )}
-                              </Alert>
-                          </Col>
+                                      <>
+                                          <b className="me-5">Status:</b>{isDelivered ? (
+                                              <b className="text-success">Delivered at {isDelivered}</b>
+                                          ) : (
+                                              <b className="text-danger">Not delivered</b>
+                                          )} <br />
+                                      </>
+                                  )}</>
+                  </Col>
               <Col>
-                <Alert className="mt-3" variant={isPaid ? "success" : "danger"}>
-                  {isPaid ? <>Paid on {isPaid}</> : <>Not paid yet</>}
-                </Alert>
+                              <>
+                                  {refund ? (
+                                      <>
+                                          <b>Status:</b><b className="ms-2 text-success">Order refunded on {refund}</b> <br />
+                                      </>
+                                      ) : (
+                                      <>
+                                          <b>Status:</b>{isPaid ? (<b className="ms-2 text-success">Paid on {isPaid}</b>) : (<b className="ms-5 text-danger">Not paid yet</b>)} <br />
+                                      </>
+                          )}
+                              </>
               </Col>
             </Row>
           </Row>
@@ -185,6 +198,25 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled 
                                   type="button"
                               >
                                   {cancelButtonMessage}
+                              </Button>
+                          </div>
+                          <div className="mt-3 d-grid gap-2">
+                              <Button
+                                  size="lg"
+                                  onClick={() =>
+                                      markAsRefund(id)
+                                          .then((res) => {
+                                              if (res) {
+                                                  refund(true);
+                                              }
+                                          })
+                                          .catch(er => console.log(er.response.data.message ? er.response.data.message : er.response.data))
+                                  }
+                                  disabled={buttonDisabled1}
+                                  variant="outline-primary"
+                                  type="button"
+                              >
+                                  {refundButtonMessage}
                               </Button>
                           </div>
             </ListGroup.Item>

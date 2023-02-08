@@ -80,8 +80,9 @@ const OrdersPageComponent = ({ getOrders }) => {
               <th>User</th>
               <th>Date</th>
               <th>Total</th>
-              <th>Delivered</th>
-              <th>Payment Method</th>
+                          <th>Delivered</th>
+                          <th>Paid</th>
+                          <th>Payment Method</th>
               <th>Order details</th>
             </tr>
           </thead>
@@ -107,9 +108,25 @@ const OrdersPageComponent = ({ getOrders }) => {
                             </>
                         )}
                         
-                </td>
+                    </td>
+                    <td className="text-center">
+                        {order.isPaid ? (
+                            <>
+                                {order.refund ? (<p className="fw-bold text-success">Refunded</p>) : (
+                                    <BsCheckLg className = "text-success" />
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                <BsXLg className="text-danger" />
+                            </>
+                        )}
+
+                    </td>
                     <td className="text-center">{order.paymentMethod}</td>
-                <td>
+
+                    <td>
+                        
                   <Link to={`/admin/order-details/${order._id}`}>
                     go to order
                   </Link>

@@ -42,6 +42,14 @@ const orderSchema = mongoose.Schema({
     paidAt: {
         type: Date,
     },
+    refund: {
+        type: Boolean,
+        required: true,
+        default: false,
+    },
+    refundAt: {
+        type: Date,
+    },
     cancelled: {
         type: Boolean,
         required: true,
