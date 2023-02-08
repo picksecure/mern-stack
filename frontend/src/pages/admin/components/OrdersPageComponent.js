@@ -102,8 +102,12 @@ const OrdersPageComponent = ({ getOrders }) => {
                         {order.isDelivered ? (
                             <BsCheckLg className="text-success" />
                         ) : (
-                            <BsXLg className="text-danger" />
+                            <>
+                                    {order.cancelled ? (<p>Cancelled</p>) : (<BsXLg className="text-danger" />)}
+                            
+                            </>
                         )}
+                        
                 </td>
                     <td className="text-center">{order.paymentMethod}</td>
                 <td>

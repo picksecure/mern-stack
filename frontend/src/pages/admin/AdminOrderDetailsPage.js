@@ -13,9 +13,14 @@ const markAsDelivered = async (id) => {
         return data;
     }
 }
-
+const markAsCancelled = async (id) => {
+    const { data } = await axios.put("/api/orders/cancelled/" + id);
+    if (data) {
+        return data;
+    }
+}
 const AdminOrderDetailsPage = () => {
-  return <OrderDetailsPageComponent getOrder={getOrder} markAsDelivered={markAsDelivered} />
+    return <OrderDetailsPageComponent markAsCancelled={markAsCancelled} getOrder={getOrder} markAsDelivered={markAsDelivered} />
 };
 
 export default AdminOrderDetailsPage;

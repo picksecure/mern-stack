@@ -20,7 +20,8 @@ const UserOrderDetailsPageComponent = ({
 }) => {
   const [userAddress, setUserAddress] = useState({});
   const [paymentMethod, setPaymentMethod] = useState("");
-  const [isPaid, setIsPaid] = useState(false);
+    const [isPaid, setIsPaid] = useState(false);
+    const [cancelled, setCancelled] = useState(false);
   const [orderButtonMessage, setOrderButtonMessage] = useState("");
   const [cartItems, setCartItems] = useState([]);
     const [cartSubtotal, setCartSubtotal] = useState(0);
@@ -67,9 +68,15 @@ const UserOrderDetailsPageComponent = ({
           setCartShipping(data.orderTotal.cartShipping);
         data.isDelivered
           ? setIsDelivered(data.deliveredAt)
-          : setIsDelivered(false);
-        data.isPaid ? setIsPaid(data.paidAt) : setIsPaid(false);
-        if (data.isPaid) {
+              : setIsDelivered(false);
+          data.cancelled
+              ? setCancelled(data.cancelledAt)
+              : setCancelled(false);
+          data.isPaid ? setIsPaid(data.paidAt) : setIsPaid(false);
+          if (data.cancelled) {
+              setOrderButtonMessage("Your order has been cancelled");
+              setButtonDisabled(true);
+          } else if (data.isPaid) {
           setOrderButtonMessage("Your order is finished");
           setButtonDisabled(true);
         } else {
@@ -94,8 +101,8 @@ const UserOrderDetailsPageComponent = ({
         loadPayPalScript(cartSubtotal, cartItems, id, updateStateAfterOrder)
       }
     } else {
-        setOrderButtonMessage("Your order was placed. Thank you");
         window.location.reload(false);
+        setOrderButtonMessage("Your order was placed. Thank you");
 
     }
   };
@@ -124,13 +131,24 @@ const UserOrderDetailsPageComponent = ({
                             <b className="me-5">Name:</b> {userInfo.name} {userInfo.lastName} <br />
                             <b className="me-4 pe-2">Address:</b> {userAddress.address} {userAddress.city} {userAddress.state} {userAddress.zipCode} <br />
                             <b className="me-4 pe-4">Phone:</b> {userAddress.phoneNumber} <br />
-                            <b className="me-5">Status:</b>{isDelivered ? (
-                                <b className="text-success">Delivered at {isDelivered}</b>
-                            ) : (
-                                <b className="text-danger">Not delivered</b>
-                            )} <br/>
+                            <>
+                                {cancelled ? (
+                                    <>
+                                        <b className="me-5">Status:</b>
+                                            <b className="text-success">Order Cancelled</b>
+                                         <br />
+                                    </>
+                                ) : (
+                                        <>
+                                    <b className="me-5">Status:</b>{isDelivered ? (
+                                        <b className="text-success">Delivered at {isDelivered}</b>
+                                        ) : (
+                                            <b className="text-danger">Not delivered</b>
+                                            )} <br />
+                                        </>
+                                )}</>
                         </Col>
-            <Col md={4}>
+            <Col md={5}>
               <h2>Payment method</h2>
               <Form.Select className="ms-3 mb-5" value={paymentMethod} disabled={true}>
                 <option value="pp">PayPal</option>
@@ -142,7 +160,15 @@ const UserOrderDetailsPageComponent = ({
                                 <></>
                             ) : (
                                     <>
+                                        {cancelled ? (
+                                            <>
+                                                <b>Status:</b><b className="ms-2 text-success">Cancelled on {cancelled}</b>
+                                            </>
+                                        ) : (
+                                                <>
                                         <b>Status:</b>{isPaid ? (<b className="ms-2 text-success">Paid on {isPaid}</b>) : (<b className="ms-5 text-danger">Not paid yet</b>)} <br />
+                                       </>
+                                                    )}
                                         </>
                             )}
                         </Col>
@@ -185,7 +211,7 @@ const UserOrderDetailsPageComponent = ({
                   {orderButtonMessage}
                 </Button>
                             </div>
-                            <div style={{ position: "relative", zIndex: 1 }} className="mt-5">
+                            <div style={{ position: "relative", zIndex: 1 }} className="mt-5 mb-5">
                 <div ref={paypalContainer} id="paypal-container-element"></div>
               </div>
             </ListGroup.Item>

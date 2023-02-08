@@ -85,6 +85,18 @@ const updateOrderToDelivered = async (req, res, next) => {
     }
 }
 
+const updateOrderToCancelled = async (req, res, next) => {
+    try {
+        const order = await Order.findById(req.params.id).orFail();
+        order.cancelled = true;
+        order.cancelledAt = Date.now();
+        const updatedOrder = await order.save();
+        res.send(updatedOrder);
+    } catch (err) {
+        next(err);
+    }
+}
+
 const getOrders = async (req, res, next) => {
     try {
         const orders = await Order.find({}).populate("user","-password").sort({ paymentMethod: "desc" });
@@ -114,4 +126,4 @@ const getOrderForAnalysis = async (req, res, next) => {
     }
 }
 
-module.exports = {getUserOrders, getOrder, createOrder, updateOrderToPaid, updateOrderToDelivered, getOrders, getOrderForAnalysis}
+module.exports = { getUserOrders, getOrder, createOrder, updateOrderToPaid, updateOrderToCancelled, updateOrderToDelivered, getOrders, getOrderForAnalysis}

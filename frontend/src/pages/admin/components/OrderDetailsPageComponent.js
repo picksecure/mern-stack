@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import { logout } from "../../../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 
-const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
+const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
     const [cartPrice, setCartPrice] = useState(0);
@@ -24,11 +24,14 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
   const [userInfo, setUserInfo] = useState({});
   const [paymentMethod, setPaymentMethod] = useState("");
   const [isPaid, setIsPaid] = useState(false);
-  const [isDelivered, setIsDelivered] = useState(false);
+    const [isDelivered, setIsDelivered] = useState(false);
+    const [cancelled, setCancelled] = useState(false);
   const [cartSubtotal, setCartSubtotal] = useState(0);
-  const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
   const [orderButtonMessage, setOrderButtonMessage] =
-    useState("Mark as delivered");
+        useState("Mark as delivered");
+    const [cancelButtonMessage, setCancelButtonMessage] =
+        useState("Cancel The Order");
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -39,7 +42,10 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
         order.isPaid ? setIsPaid(order.paidAt) : setIsPaid(false);
         order.isDelivered
           ? setIsDelivered(order.deliveredAt)
-          : setIsDelivered(false);
+              : setIsDelivered(false);
+          order.cancelled
+              ? setCancelled(order.cancelledAt)
+              : setCancelled(false);
           setCartSubtotal(order.orderTotal.cartSubtotal);
           setCartPrice(order.orderTotal.cartPrice);
           setCartTax(order.orderTotal.cartTax);
@@ -47,7 +53,11 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
         if (order.isDelivered) {
           setOrderButtonMessage("Order is finished");
           setButtonDisabled(true);
-        }
+          }
+          if (order.cancelled) {
+              setCancelButtonMessage("Order is cancelled");
+              setButtonDisabled(true);
+          }
         setCartItems(order.cartItems);
       })
       .catch((er) =>
@@ -56,7 +66,7 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
         //   er.response.data.message ? er.response.data.message : er.response.data
         // )
       );
-  }, [isDelivered, id, getOrder, dispatch]);
+  }, [isDelivered, cancelled, id, getOrder, dispatch]);
   return (
     <Container fluid>
       <Row className="mt-4 ms-5">
@@ -92,7 +102,19 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
                     <>Not delivered</>
                   )}
                 </Alert>
-              </Col>
+                          </Col>
+                          <Col>
+                              <Alert
+                                  className="mt-3"
+                                  variant={cancelled ? "success" : "danger"}
+                              >
+                                  {cancelled ? (
+                                      <>Cancelled at {cancelled}</>
+                                  ) : (
+                                      <>Not cancelled</>
+                                  )}
+                              </Alert>
+                          </Col>
               <Col>
                 <Alert className="mt-3" variant={isPaid ? "success" : "danger"}>
                   {isPaid ? <>Paid on {isPaid}</> : <>Not paid yet</>}
@@ -145,7 +167,26 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
                 >
                   {orderButtonMessage}
                 </Button>
-              </div>
+                          </div>
+                          <div className="mt-3 d-grid gap-2">
+                              <Button
+                                  size="lg"
+                                  onClick={() =>
+                                      markAsCancelled(id)
+                                          .then((res) => {
+                                              if (res) {
+                                                  cancelled(true);
+                                              }
+                                          })
+                                          .catch(er => console.log(er.response.data.message ? er.response.data.message : er.response.data))
+                                  }
+                                  disabled={buttonDisabled}
+                                  variant="outline-primary"
+                                  type="button"
+                              >
+                                  {cancelButtonMessage}
+                              </Button>
+                          </div>
             </ListGroup.Item>
           </ListGroup>
         </Col>
