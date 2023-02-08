@@ -93,22 +93,22 @@ const UsersPageComponent = ({ fetchUsers, deleteUser }) => {
               <Table striped bordered hover responsive className="order-table table">
           <thead>
             <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Is Admin</th>
-              <th>Edit/Delete</th>
+                          <th className="text-center">#</th>
+                          <th className="text-center">First Name</th>
+                          <th className="text-center">Last Name</th>
+                          <th className="text-center">Email</th>
+                          <th className="text-center">Is Admin</th>
+                          <th className="text-center">Edit/Delete</th>
             </tr>
           </thead>
           <tbody>
             {users.map(
               (user, idx) => (
                 <tr key={idx}>
-                  <td>{idx + 1}</td>
-                  <td>{user.name}</td>
-                  <td>{user.lastName}</td>
-                  <td>{user.email}</td>
+                        <td className="text-center">{idx + 1}</td>
+                        <td>{user.name}</td>
+                        <td>{user.lastName}</td>
+                        <td>{user.email}</td>
                         <td className="text-center">
                             {user.isAdmin ? <BsCheckLg className="text-success" /> : <BsXLg className="text-danger" />}
                         </td>
