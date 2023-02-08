@@ -21,34 +21,54 @@ const UserOrdersPageComponent = ({ getOrders, fetchSetting }) => {
     }, [getOrders])
 
   return (
-      <Row className="m-5">
+      <Row className="m-5 justify-content-center">
           <MetaComponent
               title={setting.seoHelmentTitleUserOrders}
               description={setting.seoHelmentDescriptionUserOrders}
               name={setting.seoHelmentName}
               type={setting.seoHelmentTypeUserOrders} />
-      <Col md={12}>
-        <h1>My Orders</h1>
+      <Col md={8}>
+        <h1 className="mb-3">My Orders</h1>
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>#</th>
-              <th>Date</th>
-              <th>Total</th>
-              <th>Delivered</th>
-              <th>Order details</th>
+                          <th className="text-center">#</th>
+                          <th className="text-center">Date</th>
+                          <th className="text-center">Total</th>
+                          <th className="text-center">Delivered</th>
+                          <th className="text-center">Paid</th>
+                          <th className="text-center">Order details</th>
             </tr>
           </thead>
           <tbody>
             {orders.map(
               (order, idx) => (
                 <tr key={idx}>
-                  <td>{idx +1}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
-                        <td>{order.orderTotal.cartSubtotal}</td>
+                        <td className="text-center">{idx +1}</td>
+                        <td className="text-center">{order.createdAt.substring(0, 10)}</td>
+                        <td className="text-center">{order.orderTotal.cartSubtotal}</td>
                         <td className="text-center">
-                            {order.isDelivered ? <BsCheckLg className="text-success" /> : <BsXLg className="text-danger" />}
-                  </td>
+                            {order.isDelivered ? (
+                                <BsCheckLg className="text-success" />
+                            ) : (
+                                <>
+                                    {order.cancelled ? (<p className="text-success fw-bold">Cancelled</p>) : (<BsXLg className="text-danger" />)}
+                                </>
+                            )}
+                        </td>
+                        <td className="text-center">
+                            {order.isPaid ? (
+                                <>
+                                    {order.refund ? (<p className="fw-bold text-success">Refunded</p>) : (
+                                        <BsCheckLg className="text-success" />
+                                    )}
+                                </>
+                            ) : (
+                                <>
+                                    <BsXLg className="text-danger" />
+                                </>
+                            )}
+                        </td>
                   <td>
                     <Link to={`/user/order-details/${order._id}`}>go to order</Link>
                   </td>
