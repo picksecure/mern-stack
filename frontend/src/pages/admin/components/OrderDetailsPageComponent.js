@@ -58,12 +58,22 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
           setCartPrice(order.orderTotal.cartPrice);
           setCartTax(order.orderTotal.cartTax);
           setCartShipping(order.orderTotal.cartShipping);
+          if (order.isDelivered) {
+              setOrderButtonMessage("Order is finished");
+              setRefundButtonMessage("Refund not possible");
+              setCancelButtonMessage("Cannot cancel order");
+              setButtonDisabled2(true);
+          }
         if (order.isDelivered) {
           setOrderButtonMessage("Order is finished");
           setButtonDisabled2(true);
           }
+          if (!order.isDelivered && order.cancelled) {
+              setOrderButtonMessage("Order has not been delivered");
+              setButtonDisabled2(true);
+          }
           if (order.cancelled) {
-              setCancelButtonMessage("Order is cancelled");
+              setCancelButtonMessage("Order has been cancelled");
               setButtonDisabled(true);
           }
           if (!order.isPaid && order.cancelled) {
