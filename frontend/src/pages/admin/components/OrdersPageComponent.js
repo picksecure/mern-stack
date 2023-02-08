@@ -103,8 +103,7 @@ const OrdersPageComponent = ({ getOrders }) => {
                             <BsCheckLg className="text-success" />
                         ) : (
                             <>
-                                    {order.cancelled ? (<p>Cancelled</p>) : (<BsXLg className="text-danger" />)}
-                            
+                                    {order.cancelled ? (<p className="text-success fw-bold">Cancelled</p>) : (<BsXLg className="text-danger" />)}
                             </>
                         )}
                         
