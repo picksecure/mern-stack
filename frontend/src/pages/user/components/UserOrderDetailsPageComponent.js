@@ -77,10 +77,10 @@ const UserOrderDetailsPageComponent = ({
               ? setCancelled(data.cancelledAt)
               : setCancelled(false);
           data.isPaid ? setIsPaid(data.paidAt) : setIsPaid(false);
-          if (data.refund) {
+          if (data.refund && data.cancelled) {
               setOrderButtonMessage("Your order has been refunded");
               setButtonDisabled(true);
-          }
+          } else
           if (data.cancelled) {
               setOrderButtonMessage("Your order has been cancelled");
               setButtonDisabled(true);

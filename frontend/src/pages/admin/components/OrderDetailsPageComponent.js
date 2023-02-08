@@ -29,6 +29,7 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
     const [refund, setRefund] = useState(false);
   const [cartSubtotal, setCartSubtotal] = useState(0);
     const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [buttonDisabled2, setButtonDisabled2] = useState(false);
     const [buttonDisabled1, setButtonDisabled1] = useState(false);
   const [orderButtonMessage, setOrderButtonMessage] =
         useState("Mark as delivered");
@@ -59,11 +60,15 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
           setCartShipping(order.orderTotal.cartShipping);
         if (order.isDelivered) {
           setOrderButtonMessage("Order is finished");
-          setButtonDisabled(true);
+          setButtonDisabled2(true);
           }
           if (order.cancelled) {
               setCancelButtonMessage("Order is cancelled");
               setButtonDisabled(true);
+          }
+          if (!order.isPaid && order.cancelled) {
+              setRefundButtonMessage("Order has not been paid");
+              setButtonDisabled1(true);
           }
           if (order.refund) {
               setRefundButtonMessage("Order has been refunded");
@@ -174,7 +179,7 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
                     })
                     .catch(er => console.log(er.response.data.message ? er.response.data.message : er.response.data))
                   }
-                  disabled={buttonDisabled}
+                                  disabled={buttonDisabled2 || buttonDisabled}
                   variant="outline-primary"
                   type="button"
                 >
@@ -193,7 +198,7 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
                                           })
                                           .catch(er => console.log(er.response.data.message ? er.response.data.message : er.response.data))
                                   }
-                                  disabled={buttonDisabled}
+                                  disabled={buttonDisabled || buttonDisabled2}
                                   variant="outline-primary"
                                   type="button"
                               >
@@ -212,7 +217,7 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
                                           })
                                           .catch(er => console.log(er.response.data.message ? er.response.data.message : er.response.data))
                                   }
-                                  disabled={buttonDisabled1}
+                                  disabled={buttonDisabled1 || buttonDisabled2}
                                   variant="outline-primary"
                                   type="button"
                               >
