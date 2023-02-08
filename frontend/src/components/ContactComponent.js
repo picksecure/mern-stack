@@ -86,6 +86,7 @@ return (
                     <Form.Group className="mb-3" controlId="formBasicComment">
                         <Form.Label>Comment:</Form.Label>
                         <Form.Control
+                            as="textarea"
                             name="comment"
                             required
                             className="border-dark"
