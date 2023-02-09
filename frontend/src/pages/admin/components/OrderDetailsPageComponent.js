@@ -17,7 +17,7 @@ import { logout } from "../../../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 import paths from "../../../router/paths";
 
-const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled, markAsRefund }) => {
+const OrderDetailsPageComponent = ({ getOrder, markAsPaid, markAsDelivered, markAsCancelled, markAsRefund }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
     const [cartPrice, setCartPrice] = useState(0);
@@ -32,9 +32,12 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
   const [cartSubtotal, setCartSubtotal] = useState(0);
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const [buttonDisabled2, setButtonDisabled2] = useState(false);
+    const [buttonDisabled3, setButtonDisabled3] = useState(false);
     const [buttonDisabled1, setButtonDisabled1] = useState(false);
   const [orderButtonMessage, setOrderButtonMessage] =
         useState("Mark as delivered");
+    const [paidButtonMessage, setPaidButtonMessage] =
+        useState("Mark as paid");
     const [cancelButtonMessage, setCancelButtonMessage] =
         useState("Cancel the order");
     const [refundButtonMessage, setRefundButtonMessage] =
@@ -46,7 +49,9 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
       .then((order) => {
         setUserInfo(order.user);
         setPaymentMethod(order.paymentMethod);
-        order.isPaid ? setIsPaid(order.paidAt) : setIsPaid(false);
+          order.isPaid
+              ? setIsPaid(order.paidAt)
+              : setIsPaid(false);
         order.isDelivered
           ? setIsDelivered(order.deliveredAt)
               : setIsDelivered(false);
@@ -69,6 +74,14 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
         if (order.isDelivered) {
           setOrderButtonMessage("Order is finished");
           setButtonDisabled2(true);
+          }
+          if (order.paymentMethod == 'pp') {
+              setPaidButtonMessage("Order is Paypal Method");
+              setButtonDisabled3(true);
+          }
+          if (order.paymentMethod == 'cod' && order.isPaid) {
+              setPaidButtonMessage("Order has been paid");
+              setButtonDisabled3(true);
           }
           if (!order.isDelivered && order.cancelled) {
               setOrderButtonMessage("Order has not been delivered");
@@ -184,7 +197,26 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered, markAsCancelled,
                       <ListGroup.Item className="border-bottom">
               Total price: <span className="fw-bold">${cartSubtotal}</span>
             </ListGroup.Item>
-            <ListGroup.Item>
+                      <ListGroup.Item>
+                          <div className="d-grid gap-2 mb-3">
+                              <Button
+                                  size="lg"
+                                  onClick={() =>
+                                      markAsPaid(id)
+                                          .then((res) => {
+                                              if (res) {
+                                                  setIsPaid(true);
+                                              }
+                                          })
+                                          .catch(er => console.log(er.response.data.message ? er.response.data.message : er.response.data))
+                                  }
+                                  disabled={buttonDisabled3 || buttonDisabled}
+                                  variant="outline-primary"
+                                  type="button"
+                              >
+                                  {paidButtonMessage}
+                              </Button>
+                          </div>
               <div className="d-grid gap-2">
                 <Button
                   size="lg"

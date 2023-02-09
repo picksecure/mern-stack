@@ -123,8 +123,15 @@ const OrdersPageComponent = ({ getOrders }) => {
                         )}
 
                     </td>
-                    <td className="text-center">{order.paymentMethod}</td>
-
+                    <td className="text-center">
+                        <>
+                            {order.paymentMethod == 'pp' ? (
+                                <p>Paypal</p>
+                            ): (
+                                    <p>Cash On Delivery</p>
+                                )}
+                        </>
+                    </td>
                     <td>
                         
                   <Link to={`/admin/order-details/${order._id}`}>
