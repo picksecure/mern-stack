@@ -29,7 +29,6 @@ const MessagePageComponent = ({ fetchMessages, deleteMessage }) => {
         return () => abctrl.abort();
     }, [messageDeleted, fetchMessages]);
     (function () {
-        'use strict';
 
         var TableFilter = (function () {
             var Arr = Array.prototype;

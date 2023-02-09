@@ -39,7 +39,6 @@ const UsersPageComponent = ({ fetchUsers, deleteUser }) => {
       return () => abctrl.abort();
   }, [userDeleted, dispatch, fetchUsers]);
     (function () {
-        'use strict';
 
         var TableFilter = (function () {
             var Arr = Array.prototype;

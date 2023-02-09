@@ -69,9 +69,7 @@ function MobileHeaderComponent() {
         }
     }, [userInfo.isAdmin, dispatch])
 
-    const myFunction = (e) => {
-        document.getElementById("navbarToggleExternalContent").classList.toggle("show");
-    }
+   
     // Close the dropdown if the user clicks outside of it
     window.onclick = function (event) {
         if (!event.target.matches('.dropbtn')) {
@@ -90,7 +88,7 @@ function MobileHeaderComponent() {
         <>
             <nav className="row navbar navbar-light bg-light pt-3 pb-3">
                 <div className="ms-5 col container-fluid ">
-                    <button className="navbar-toggler border-light dropbtn" type="button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler border-light dropbtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <FaBars/>
                     </button>
                 </div>
@@ -136,7 +134,7 @@ function MobileHeaderComponent() {
                             </li>
                            
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" href={paths.USERPROFILE} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {userInfo.name}
                                 </a>
                                 <div className="dropdown-menu ps-3" aria-labelledby="#navbarDropdown">
@@ -147,7 +145,7 @@ function MobileHeaderComponent() {
                         </>
                     ) : userInfo.name && !userInfo.isAdmin ? (
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle" href={paths.USERPROFILE} id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {userInfo.name}
                                 </a>
                                 <div className="dropdown-menu ps-3" aria-labelledby="#navbarDropdown">

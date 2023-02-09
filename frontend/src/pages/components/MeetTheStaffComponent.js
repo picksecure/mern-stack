@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import Russ from "../../gallery/russ.jpg";
 import Blank from "../../gallery/blank_Person.jpg";
 import MetaComponent from "../../components/MetaComponent";
 

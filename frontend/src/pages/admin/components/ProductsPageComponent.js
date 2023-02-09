@@ -22,7 +22,6 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
     }
   };
     (function () {
-        'use strict';
 
         var TableFilter = (function () {
             var Arr = Array.prototype;

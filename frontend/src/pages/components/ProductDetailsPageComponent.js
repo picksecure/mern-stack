@@ -17,7 +17,7 @@ import ImageZoom from "js-image-zoom";
 import { useEffect, useState, useRef } from "react";
 import MetaComponent from "../../components/MetaComponent";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import paths from "../../router/paths";
 
 const ProductDetailsPageComponent = ({

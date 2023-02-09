@@ -1,8 +1,6 @@
 import { Row, Col, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AdminLinksComponent from "../../../components/admin/AdminLinksComponent";
-import { BsCheckLg } from 'react-icons/bs';
-import { BsXLg } from 'react-icons/bs';
 import { useEffect, useState } from "react";
 
 import { logout } from "../../../redux/actions/userActions";
@@ -22,7 +20,6 @@ const OrdersPageComponent = ({ getOrders }) => {
       );
   }, [getOrders, dispatch]);
     (function () {
-        'use strict';
 
         var TableFilter = (function () {
             var Arr = Array.prototype;
@@ -125,7 +122,7 @@ const OrdersPageComponent = ({ getOrders }) => {
                     </td>
                     <td className="text-center">
                         <>
-                            {order.paymentMethod == 'pp' ? (
+                            {order.paymentMethod === 'pp' ? (
                                 <p>Paypal</p>
                             ): (
                                     <p>Cash On Delivery</p>

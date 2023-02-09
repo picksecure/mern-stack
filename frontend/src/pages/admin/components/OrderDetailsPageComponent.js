@@ -3,7 +3,6 @@ import {
   Row,
   Col,
   Form,
-  Alert,
   ListGroup,
   Button,
   Breadcrumb,
@@ -75,11 +74,11 @@ const OrderDetailsPageComponent = ({ getOrder, markAsPaid, markAsDelivered, mark
           setOrderButtonMessage("Order is finished");
           setButtonDisabled2(true);
           }
-          if (order.paymentMethod == 'pp') {
+          if (order.paymentMethod === 'pp') {
               setPaidButtonMessage("Order is Paypal Method");
               setButtonDisabled3(true);
           }
-          if (order.paymentMethod == 'cod' && order.isPaid) {
+          if (order.paymentMethod === 'cod' && order.isPaid) {
               setPaidButtonMessage("Order has been paid");
               setButtonDisabled3(true);
           }
