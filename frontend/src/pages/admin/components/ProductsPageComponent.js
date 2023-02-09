@@ -103,6 +103,7 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
               <th>Product Name</th>
                           <th>Price</th>
                           <th>Location</th>
+                          <th>Vin Number</th>
                           <th>Barcode</th>
                           <th>Print Barcode</th>
               <th>Category</th>
@@ -116,6 +117,7 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
                     <td className="text-center">{item.name}</td>
                     <td className="text-center">{item.price}</td>
                     <td className="text-center">{item.location}</td>
+                    <td className="text-center">{item.vin}</td>
                     <td className="text-center">
                         {item.barcode}
                     </td>

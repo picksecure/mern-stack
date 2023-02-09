@@ -10,6 +10,9 @@ const productSchema = mongoose.Schema({
         required: true,
         unique: true,
     },
+    vin: {
+        type: String,
+    },
     description: {
         type: String,
         required: true,

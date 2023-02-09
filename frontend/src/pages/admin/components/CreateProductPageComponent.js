@@ -60,6 +60,7 @@ const CreateProductPageComponent = ({
         price: form.price.value,
         featured: form.featured.value,
         location: form.location.value,
+        vin: form.vin.value,
         barcode: barcode,
       category: form.category.value,
       attributesTable: attributesTable,
@@ -205,7 +206,10 @@ const CreateProductPageComponent = ({
                             <Form.Label>Location</Form.Label>
                             <Form.Control name="location" required type="text" />
                         </Form.Group>
-
+                        <Form.Group className="mb-3" controlId="formBasicVin">
+                            <Form.Label>Vin Number</Form.Label>
+                            <Form.Control name="vin" type="text" />
+                        </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicBarcode">
                             <Row>
                                 <Col>

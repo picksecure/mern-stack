@@ -80,8 +80,8 @@ const OrdersPageComponent = ({ getOrders }) => {
               <th>User</th>
               <th>Date</th>
               <th>Total</th>
-                          <th>Delivered</th>
-                          <th>Paid</th>
+                          <th>Order Status</th>
+                          <th>Payment Status</th>
                           <th>Payment Method</th>
               <th>Order details</th>
             </tr>
@@ -101,10 +101,10 @@ const OrdersPageComponent = ({ getOrders }) => {
                     <td className="text-center">{order.orderTotal.cartSubtotal}</td>
                 <td className="text-center">
                         {order.isDelivered ? (
-                            <BsCheckLg className="text-success" />
+                            <p className="text-success fw-bold">Delivered</p>
                         ) : (
-                            <>
-                                    {order.cancelled ? (<p className="text-success fw-bold">Cancelled</p>) : (<BsXLg className="text-danger" />)}
+                                <>
+                                    {order.cancelled ? (<p className="text-primary fw-bold">Cancelled</p>) : (<p className="fw-bold text-danger">Not Delivered</p>)}
                             </>
                         )}
                         
@@ -112,13 +112,13 @@ const OrdersPageComponent = ({ getOrders }) => {
                     <td className="text-center">
                         {order.isPaid ? (
                             <>
-                                {order.refund ? (<p className="fw-bold text-success">Refunded</p>) : (
-                                    <BsCheckLg className = "text-success" />
+                                {order.refund ? (<p className="fw-bold text-primary">Refunded</p>) : (
+                                    <p className="fw-bold text-success">Paid</p>
                                 )}
                             </>
                         ) : (
                             <>
-                                <BsXLg className="text-danger" />
+                                <p className="fw-bold text-danger">Not Paid</p>
                             </>
                         )}
 

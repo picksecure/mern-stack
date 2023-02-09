@@ -76,6 +76,7 @@ const EditProductPageComponent = ({
       count: form.count.value,
         price: form.price.value,
         location: form.location.value,
+        vin: form.vin.value,
         barcode: form.barcode.value,
         featured: form.featured.value,
       category: form.category.value,
@@ -224,6 +225,14 @@ const EditProductPageComponent = ({
                                 required
                                 type="text"
                                 defaultValue={product.location}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicVin">
+                            <Form.Label>Vin Number</Form.Label>
+                            <Form.Control
+                                name="vin"
+                                type="text"
+                                defaultValue={product.vin}
                             />
                         </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicBarcode">

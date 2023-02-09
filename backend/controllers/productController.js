@@ -146,7 +146,7 @@ const adminGetProducts = async (req, res, next) => {
   try {
     const products = await Product.find({})
       .sort({ category: 1 })
-      .select("name price barcode category location");
+      .select("name price barcode vin category location");
     return res.json(products);
   } catch (err) {
     next(err);
@@ -175,9 +175,10 @@ const adminDeleteProduct = async (req, res, next) => {
 const adminCreateProduct = async (req, res, next) => {
   try {
     const product = new Product();
-    const { name, description, barcode, featured, location, count, price, category, attributesTable } =
+    const { name, description, vin, barcode, featured, location, count, price, category, attributesTable } =
       req.body;
-    product.name = name;
+      product.name = name;
+      product.vin = vin;
     product.description = description;
       product.count = count;
       product.location = location;
@@ -204,9 +205,10 @@ const adminCreateProduct = async (req, res, next) => {
 const adminUpdateProduct = async (req, res, next) => {
   try {
       const product = await Product.findById(req.params.id).orFail();
-      const { name, description, count, price, location, barcode, featured, category, attributesTable } =
+      const { name, description, vin, count, price, location, barcode, featured, category, attributesTable } =
       req.body;
-    product.name = name || product.name;
+      product.name = name || product.name;
+      product.vin = vin || product.vin;
       product.description = description || product.description;
       product.barcode = barcode || product.barcode;
       product.location = location || product.location;
